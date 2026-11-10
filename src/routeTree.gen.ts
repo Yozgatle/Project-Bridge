@@ -10,33 +10,206 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as DatenschutzRouteImport } from './routes/datenschutz'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as ImpressumRouteImport } from './routes/impressum'
+import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as PreiseRouteImport } from './routes/preise'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as BezirkeIndexRouteImport } from './routes/bezirke.index'
+import { Route as BezirkeSlugRouteImport } from './routes/bezirke.$slug'
+import { Route as LeistungenIndexRouteImport } from './routes/leistungen.index'
+import { Route as LeistungenSlugRouteImport } from './routes/leistungen.$slug'
+import { Route as UmgebungIndexRouteImport } from './routes/umgebung.index'
+import { Route as UmgebungSlugRouteImport } from './routes/umgebung.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DatenschutzRoute = DatenschutzRouteImport.update({
+  id: '/datenschutz',
+  path: '/datenschutz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ImpressumRoute = ImpressumRouteImport.update({
+  id: '/impressum',
+  path: '/impressum',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PreiseRoute = PreiseRouteImport.update({
+  id: '/preise',
+  path: '/preise',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BezirkeIndexRoute = BezirkeIndexRouteImport.update({
+  id: '/bezirke/',
+  path: '/bezirke/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BezirkeSlugRoute = BezirkeSlugRouteImport.update({
+  id: '/bezirke/$slug',
+  path: '/bezirke/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeistungenIndexRoute = LeistungenIndexRouteImport.update({
+  id: '/leistungen/',
+  path: '/leistungen/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeistungenSlugRoute = LeistungenSlugRouteImport.update({
+  id: '/leistungen/$slug',
+  path: '/leistungen/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UmgebungIndexRoute = UmgebungIndexRouteImport.update({
+  id: '/umgebung/',
+  path: '/umgebung/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UmgebungSlugRoute = UmgebungSlugRouteImport.update({
+  id: '/umgebung/$slug',
+  path: '/umgebung/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/datenschutz': typeof DatenschutzRoute
+  '/faq': typeof FaqRoute
+  '/impressum': typeof ImpressumRoute
+  '/kontakt': typeof KontaktRoute
+  '/preise': typeof PreiseRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/bezirke/$slug': typeof BezirkeSlugRoute
+  '/leistungen/$slug': typeof LeistungenSlugRoute
+  '/umgebung/$slug': typeof UmgebungSlugRoute
+  '/bezirke/': typeof BezirkeIndexRoute
+  '/leistungen/': typeof LeistungenIndexRoute
+  '/umgebung/': typeof UmgebungIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/datenschutz': typeof DatenschutzRoute
+  '/faq': typeof FaqRoute
+  '/impressum': typeof ImpressumRoute
+  '/kontakt': typeof KontaktRoute
+  '/preise': typeof PreiseRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/bezirke/$slug': typeof BezirkeSlugRoute
+  '/leistungen/$slug': typeof LeistungenSlugRoute
+  '/umgebung/$slug': typeof UmgebungSlugRoute
+  '/bezirke': typeof BezirkeIndexRoute
+  '/leistungen': typeof LeistungenIndexRoute
+  '/umgebung': typeof UmgebungIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/admin': typeof AdminRoute
+  '/datenschutz': typeof DatenschutzRoute
+  '/faq': typeof FaqRoute
+  '/impressum': typeof ImpressumRoute
+  '/kontakt': typeof KontaktRoute
+  '/preise': typeof PreiseRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/bezirke/$slug': typeof BezirkeSlugRoute
+  '/leistungen/$slug': typeof LeistungenSlugRoute
+  '/umgebung/$slug': typeof UmgebungSlugRoute
+  '/bezirke/': typeof BezirkeIndexRoute
+  '/leistungen/': typeof LeistungenIndexRoute
+  '/umgebung/': typeof UmgebungIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/admin'
+    | '/datenschutz'
+    | '/faq'
+    | '/impressum'
+    | '/kontakt'
+    | '/preise'
+    | '/sitemap.xml'
+    | '/bezirke/$slug'
+    | '/leistungen/$slug'
+    | '/umgebung/$slug'
+    | '/bezirke/'
+    | '/leistungen/'
+    | '/umgebung/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/admin'
+    | '/datenschutz'
+    | '/faq'
+    | '/impressum'
+    | '/kontakt'
+    | '/preise'
+    | '/sitemap.xml'
+    | '/bezirke/$slug'
+    | '/leistungen/$slug'
+    | '/umgebung/$slug'
+    | '/bezirke'
+    | '/leistungen'
+    | '/umgebung'
+  id:
+    | '__root__'
+    | '/'
+    | '/admin'
+    | '/datenschutz'
+    | '/faq'
+    | '/impressum'
+    | '/kontakt'
+    | '/preise'
+    | '/sitemap.xml'
+    | '/bezirke/$slug'
+    | '/leistungen/$slug'
+    | '/umgebung/$slug'
+    | '/bezirke/'
+    | '/leistungen/'
+    | '/umgebung/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdminRoute: typeof AdminRoute
+  DatenschutzRoute: typeof DatenschutzRoute
+  FaqRoute: typeof FaqRoute
+  ImpressumRoute: typeof ImpressumRoute
+  KontaktRoute: typeof KontaktRoute
+  PreiseRoute: typeof PreiseRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  BezirkeSlugRoute: typeof BezirkeSlugRoute
+  LeistungenSlugRoute: typeof LeistungenSlugRoute
+  UmgebungSlugRoute: typeof UmgebungSlugRoute
+  BezirkeIndexRoute: typeof BezirkeIndexRoute
+  LeistungenIndexRoute: typeof LeistungenIndexRoute
+  UmgebungIndexRoute: typeof UmgebungIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +221,115 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/datenschutz': {
+      id: '/datenschutz'
+      path: '/datenschutz'
+      fullPath: '/datenschutz'
+      preLoaderRoute: typeof DatenschutzRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/impressum': {
+      id: '/impressum'
+      path: '/impressum'
+      fullPath: '/impressum'
+      preLoaderRoute: typeof ImpressumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/preise': {
+      id: '/preise'
+      path: '/preise'
+      fullPath: '/preise'
+      preLoaderRoute: typeof PreiseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bezirke/': {
+      id: '/bezirke/'
+      path: '/bezirke'
+      fullPath: '/bezirke/'
+      preLoaderRoute: typeof BezirkeIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bezirke/$slug': {
+      id: '/bezirke/$slug'
+      path: '/bezirke/$slug'
+      fullPath: '/bezirke/$slug'
+      preLoaderRoute: typeof BezirkeSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leistungen/': {
+      id: '/leistungen/'
+      path: '/leistungen'
+      fullPath: '/leistungen/'
+      preLoaderRoute: typeof LeistungenIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leistungen/$slug': {
+      id: '/leistungen/$slug'
+      path: '/leistungen/$slug'
+      fullPath: '/leistungen/$slug'
+      preLoaderRoute: typeof LeistungenSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/umgebung/': {
+      id: '/umgebung/'
+      path: '/umgebung'
+      fullPath: '/umgebung/'
+      preLoaderRoute: typeof UmgebungIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/umgebung/$slug': {
+      id: '/umgebung/$slug'
+      path: '/umgebung/$slug'
+      fullPath: '/umgebung/$slug'
+      preLoaderRoute: typeof UmgebungSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdminRoute: AdminRoute,
+  DatenschutzRoute: DatenschutzRoute,
+  FaqRoute: FaqRoute,
+  ImpressumRoute: ImpressumRoute,
+  KontaktRoute: KontaktRoute,
+  PreiseRoute: PreiseRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  BezirkeSlugRoute: BezirkeSlugRoute,
+  LeistungenSlugRoute: LeistungenSlugRoute,
+  UmgebungSlugRoute: UmgebungSlugRoute,
+  BezirkeIndexRoute: BezirkeIndexRoute,
+  LeistungenIndexRoute: LeistungenIndexRoute,
+  UmgebungIndexRoute: UmgebungIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
