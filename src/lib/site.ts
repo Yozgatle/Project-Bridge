@@ -19,13 +19,13 @@ export const SITE = {
 // Öffentlicher Cloudflare-Turnstile-Websiteschlüssel (kein Geheimnis). Leer = Spam-Schutz nicht konfiguriert.
 export const TURNSTILE_SITE_KEY = "";
 
-// GISA-Zahl und Firmenbuch fehlen noch – vom Inhaber nachzureichen.
+// Gewerbedaten laut WKO Firmen A-Z (Gewerbedatenbank). Nicht im Firmenbuch eingetragen.
 export const COMPANY = {
   legalName: "Savas Ceri",
   owner: "Savas Ceri",
   uid: "ATU56543057",
-  gisa: "601688109",
-  trade: "Elektrotechnik (reglementiertes Gewerbe), verliehen in Österreich",
+  gisa: "24669375 (Elektrotechnik), 26108018 (Handelsgewerbe)",
+  trade: "Elektrotechnik, eingeschränkt auf die Installation elektrischer Starkstromanlagen und -einrichtungen ohne Einschränkung hinsichtlich der Leistung oder der Spannung, die Errichtung von Blitzschutzanlagen und die Errichtung von Brandmeldeanlagen (reglementiertes Gewerbe, § 94 Z 16 GewO); Handelsgewerbe (freies Gewerbe)",
   authority: "Magistratisches Bezirksamt für den 23. Bezirk",
   chamber: "Wirtschaftskammer Wien, Landesinnung der Elektro-, Gebäude-, Alarm- und Kommunikationstechniker",
 };

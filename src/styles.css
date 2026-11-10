@@ -192,7 +192,3 @@
 html body header.site-header nav[aria-label="Hauptnavigation"] a { color: #fff !important; text-shadow: 0 1px 6px rgba(0,0,0,.45); }
 html body header.site-header nav[aria-label="Hauptnavigation"] a:hover,
 html body header.site-header nav[aria-label="Hauptnavigation"] a.text-primary { color: var(--color-primary) !important; }
-html body header.site-header > div:nth-child(2),
-html body header.site-header > div:nth-child(2) > nav[aria-label="Mobile Navigation"] { background: color-mix(in oklab, var(--brand-navy) 95%, transparent) !important; color: #fff; }
-html body header.site-header[data-clear] > div:nth-child(2) { background: transparent !important; }
-html body header.site-header > div:nth-child(2) button[aria-label^="Menü"] { color: #fff; border-color: rgb(255 255 255 / .3); }
