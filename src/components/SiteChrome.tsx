@@ -37,7 +37,7 @@ export function Header() {
   }, []);
   const clear = isHome && atTop && !menu;
   return (
-    <header data-clear={clear || undefined} className={`site-header ${isHome ? "fixed inset-x-0" : "sticky"} top-0 z-40 transition-[transform,background-color,box-shadow] duration-300 ${hidden && !menu ? "-translate-y-full" : "translate-y-0"} ${clear ? "bg-transparent" : "bg-background/95 shadow-sm backdrop-blur"}`}>
+    <header data-clear={clear || undefined} className={`site-header ${isHome ? "fixed inset-x-0" : "sticky"} top-0 z-40 transition-[transform,background-color,box-shadow] duration-300 ${hidden && !menu ? "-translate-y-full" : "translate-y-0"} ${clear ? "bg-transparent" : "bg-brand-navy/95 shadow-sm backdrop-blur"}`}>
       <div className={clear ? "bg-brand-navy/70 text-dark-foreground backdrop-blur-sm" : "bg-dark text-dark-foreground"}>
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2 text-xs sm:text-sm">
           <span className="flex items-center gap-2">
@@ -46,10 +46,10 @@ export function Header() {
 
         </div>
       </div>
-      <div className={clear ? "border-b border-transparent" : "border-b border-border"}>
+      <div className={clear ? "border-b border-transparent" : "border-b border-dark-foreground/10"}>
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
           <Link to="/" className="flex items-center" aria-label="CERI – Startseite">
-            <img src={logoUrl} alt="CERI" width={1015} height={600} className="h-auto w-[150px] shrink-0 object-contain sm:w-[180px] lg:w-[200px]" />
+            <img src={logoUrl} alt="CERI" width={1015} height={600} className="h-auto w-[150px] shrink-0 drop-shadow object-contain sm:w-[180px] lg:w-[200px]" />
           </Link>
           <nav className="hidden gap-4 text-sm font-semibold lg:flex" aria-label="Hauptnavigation">
             {navLinks.map((l) => (
