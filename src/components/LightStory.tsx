@@ -1,11 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Phone } from "lucide-react";
-import { SITE } from "@/lib/site";
 
-const COPY = {
-  broken: { kicker: "Defekt", title: "Flackern, Knall, dunkel.", text: "Sicherung fliegt oder Brandgeruch? Nicht selbst reparieren." },
-  fixed: { kicker: "Ceri repariert", title: "Wir bringen das Licht zurück.", text: "Meisterbetrieb aus Wien – sicher und rund um die Uhr." },
-};
 
 const GLASS = "M100 18 C 50 18, 22 58, 22 104 C 22 142, 48 162, 62 188 C 70 202, 72 214, 72 226 H128 C128 214,130 202,138 188 C152 162,178 142,178 104 C178 58,150 18,100 18Z";
 
@@ -15,7 +9,7 @@ function Bulb({ on }: { on: number }) {
     <svg viewBox="0 0 200 330" className="h-64 w-auto overflow-visible md:h-80" style={{ overflow: "visible" }} aria-hidden>
       <defs>
         <radialGradient id="ls-dark" cx="50%" cy="38%" r="60%">
-          <stop offset="0%" style={{ stopColor: "oklch(0.55 0.01 250)", stopOpacity: 0.35 }} />
+          <stop offset="0%" style={{ stopColor: "oklch(0.55 0.01 250)", stopOpacity: 0.5 }} />
           <stop offset="100%" style={{ stopColor: "oklch(0.3 0.01 250)", stopOpacity: 0.2 }} />
         </radialGradient>
         <radialGradient id="ls-lit" cx="50%" cy="38%" r="60%">
@@ -39,7 +33,7 @@ function Bulb({ on }: { on: number }) {
         ))}
       </g>
       <g className={on < 0.05 ? "ls-flicker" : ""}>
-        <path d={GLASS} fill="url(#ls-dark)" style={{ stroke: "oklch(1 0 0 / 0.35)" }} strokeWidth="1.5" />
+        <path d={GLASS} fill="url(#ls-dark)" style={{ stroke: "oklch(0.4 0.02 250 / 0.5)" }} strokeWidth="1.5" />
       </g>
       <path d={GLASS} fill="url(#ls-lit)" opacity={on} />
       <path d="M58 70 C 66 48, 84 38, 100 36" style={{ stroke: "oklch(1 0 0 / 0.7)" }} strokeWidth="6" strokeLinecap="round" fill="none" />
@@ -56,7 +50,7 @@ function Bulb({ on }: { on: number }) {
 }
 
 export function LightStory() {
-  const ref = useRef<HTMLElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [p, setP] = useState(0);
 
   useEffect(() => {
@@ -66,8 +60,8 @@ export function LightStory() {
     let cur = 0;
     const target = () => {
       const r = el.getBoundingClientRect();
-      const t = -r.top / Math.max(1, r.height - window.innerHeight);
-      return Math.min(1, Math.max(0, (t - 0.3) / 0.5));
+      const t = 1 - (r.top + r.height / 2) / window.innerHeight;
+      return Math.min(1, Math.max(0, (t - 0.2) / 0.4));
     };
     // Gedämpft nachziehen, damit schnelle Wischgesten weich wirken
     const update = () => {
@@ -88,35 +82,11 @@ export function LightStory() {
 
   const on = p * p * (3 - 2 * p); // weich
   // Hysterese: kein nervöses Hin- und Herspringen
-  const [fixed, setFixed] = useState(false);
-  useEffect(() => {
-    if (!fixed && p > 0.65) setFixed(true);
-    else if (fixed && p < 0.35) setFixed(false);
-  }, [p, fixed]);
-  const c = COPY[fixed ? "fixed" : "broken"];
 
   return (
-    <section ref={ref} aria-label="Vom Defekt zur Lösung" className="relative h-[220vh] bg-dark text-dark-foreground">
-      <div className="sticky top-0 flex h-screen items-center overflow-hidden">
-      <div className="pointer-events-none absolute inset-0" style={{ opacity: on, background: "radial-gradient(circle at 50% 40%, color-mix(in oklab, var(--accent) 35%, transparent), transparent 60%)" }} />
-      <div className="relative mx-auto grid w-full max-w-4xl items-center gap-6 px-4 md:grid-cols-2">
-        <div className="relative flex justify-center">
-          <div className="pointer-events-none absolute left-1/2 top-[38%] h-[28rem] w-[28rem] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ opacity: 0.35 * on, background: "radial-gradient(circle, oklch(0.88 0.12 80), transparent 65%)" }} />
-          <div className="pointer-events-none absolute left-1/2 top-[38%] h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ opacity: 0.7 * on, background: "radial-gradient(circle, oklch(0.92 0.15 92), transparent 70%)" }} />
-          <div className="relative"><Bulb on={on} /></div>
-        </div>
-        <div key={fixed ? "f" : "b"} className="ls-in text-center md:text-left">
-          <p className={`text-sm font-bold uppercase tracking-widest ${fixed ? "text-accent" : "text-destructive"}`}>{c.kicker}</p>
-          <h2 className="mt-2 text-2xl font-extrabold md:text-4xl">{c.title}</h2>
-          <p className="mt-3 opacity-80">{c.text}</p>
-          {fixed && (
-            <a href={SITE.phoneHref} className="btn-press mt-5 inline-flex items-center gap-2 rounded-lg bg-accent px-5 py-3 font-bold text-accent-foreground">
-              <Phone className="h-4 w-4" /> Jetzt anrufen
-            </a>
-          )}
-        </div>
-      </div>
-      </div>
-    </section>
+    <div ref={ref} aria-hidden className="pointer-events-none absolute right-4 top-0 hidden -translate-y-1/3 md:block lg:right-16">
+      <div className="absolute left-1/2 top-[38%] h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ opacity: 0.6 * on, background: "radial-gradient(circle, oklch(0.9 0.15 85), transparent 70%)" }} />
+      <div className="relative scale-75"><Bulb on={on} /></div>
+    </div>
   );
 }

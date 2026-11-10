@@ -42,5 +42,5 @@ use the editor.
 - Advisor results submit via the existing request function with contact details, selections and urgency – why: actionable requests without a second callback dialog.
 - Google Maps uses opt-in Embed with only the managed browser key – why: no Google request before consent and no server credentials in the browser.
 - Reviews remain honest empty states until an actual business profile is confirmed – why: never fabricate testimonials or metrics.
-- Home light-bulb scroll story (below trust section; advisor stays first after hero) lives in `src/components/LightStory.tsx` as pure SVG/CSS – why: fast, no video.
+- Home light bulb is a scroll-lit background decoration in the services section (`src/components/LightStory.tsx`, pure SVG) – why: fast, no extra section.
 - Project was migrated from an exported archive of an earlier Lovable project; the database schema was recreated in one consolidated migration – why: old Cloud backend is not shared.
