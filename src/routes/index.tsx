@@ -53,10 +53,7 @@ function Index() {
         <div className="hero-vignette absolute inset-0" aria-hidden="true" />
         <div className="relative mx-auto flex min-h-[78svh] max-w-6xl flex-col justify-center px-4 py-16 md:aspect-[1600/1008] md:max-h-[90vh] md:min-h-0 md:max-w-none md:px-[max(1rem,calc((100vw-1280px)/2+1rem))]">
           <div className="relative">
-            <span className="hero-badge inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-bold">
-              <span className="hero-dot" aria-hidden="true" /> ⚡ 24/7 Notdienst – In 30–45 Min. vor Ort
-            </span>
-            <h1 className="mt-5 max-w-2xl text-3xl font-extrabold leading-tight text-brand-navy md:text-5xl">
+            <h1 className="max-w-2xl text-3xl font-extrabold leading-tight text-brand-navy md:text-5xl">
               Elektriker Wien – 24h Notdienst bei <RotatingWord />
             </h1>
             <p className="mt-4 max-w-lg text-base font-medium text-brand-navy/85 md:text-lg">Rasche Hilfe bei Stromausfall, FI-Schalter, Kurzschluss &amp; E-Befund – in allen 23 Wiener Bezirken und Umgebung.</p>
