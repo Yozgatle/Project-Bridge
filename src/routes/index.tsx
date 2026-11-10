@@ -50,7 +50,7 @@ function Index() {
     <>
       <section className="relative overflow-hidden">
         <img src={hero} alt="Elektriker arbeitet an einem Verteiler in Wien" width={1600} height={1008} className="block h-[46svh] min-h-[300px] w-full object-cover object-[85%_center] md:absolute md:inset-0 md:h-full md:min-h-0 md:object-center" />
-        <div className="relative mx-auto flex max-w-6xl flex-col px-4 pb-24 pt-5 md:min-h-[100svh] md:justify-center md:py-16 md:max-w-none md:px-[max(1rem,calc((100vw-1280px)/2+1rem))]">
+        <div className="relative mx-auto flex max-w-6xl flex-col px-4 pb-8 pt-5 md:min-h-[100svh] md:justify-center md:py-16 md:max-w-none md:px-[max(1rem,calc((100vw-1280px)/2+1rem))]">
           <div className="relative">
             <p className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-wider text-brand-navy/80 md:text-sm">
               <span className="h-[2px] w-10 bg-primary" aria-hidden="true" /> 24h Meisterbetrieb · Alle 23 Wiener Bezirke &amp; Umland
