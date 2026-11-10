@@ -142,10 +142,12 @@
 
 /* Kompakter mobiler Header: Telefon-CTA ausblenden, damit rechts nur das Menü bleibt. */
 @media (max-width: 639px) {
-  header.site-header > div:first-child > div { padding-top: 0.25rem; padding-bottom: 0.25rem; }
-  header.site-header > div:nth-child(2) > div:first-child { gap: 0.5rem; padding-top: 0.375rem; padding-bottom: 0.375rem; }
-  header.site-header > div:nth-child(2) > div:first-child > a > img { width: 112px; }
+  header.site-header > div:first-child > div { padding-top: 0.125rem; padding-bottom: 0.125rem; font-size: 0.7rem; }
+  header.site-header > div:nth-child(2) > div:first-child { gap: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+  header.site-header > div:nth-child(2) > div:first-child > a > img { width: 92px; }
   header.site-header > div:nth-child(2) > div:first-child > div > a[href^="tel:"] { display: none; }
+  header.site-header nav a { font-size: 0.8125rem; }
+  header.site-header button, header.site-header > div:nth-child(2) a { padding-top: 0.375rem; padding-bottom: 0.375rem; }
 }
 
 
@@ -170,5 +172,4 @@
 @keyframes heroShock { 0% { box-shadow: 0 0 0 0 rgb(255 176 0 / .7); } 100% { box-shadow: 0 0 0 16px rgb(255 176 0 / 0); } }
 @media (prefers-reduced-motion: reduce) { .hero-word, .hero-dot, .hero-cta:hover::after { animation: none; } }
 
-.hero-vignette { background: linear-gradient(90deg, rgb(255 255 255 / 0.82) 0%, rgb(255 255 255 / 0.55) 38%, rgb(255 255 255 / 0) 62%); }
-.hero-text-shadow { text-shadow: 0 1px 12px rgb(255 255 255 / 0.7); }
+
