@@ -50,7 +50,8 @@ function Index() {
     <>
       <section className="relative overflow-hidden">
         <img src={hero} alt="Elektriker arbeitet an einem Verteiler in Wien" width={1600} height={1008} className="absolute inset-0 h-full w-full object-cover object-center" />
-        <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-center px-4 py-16 md:max-w-none md:px-[max(1rem,calc((100vw-1280px)/2+1rem))]">
+        <div className="hero-vignette absolute inset-0" aria-hidden="true" />
+        <div className="hero-text-shadow relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-center px-4 py-16 md:max-w-none md:px-[max(1rem,calc((100vw-1280px)/2+1rem))]">
           <div className="relative">
             <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-brand-navy/80 md:text-sm">
               <span className="h-[2px] w-10 bg-primary" aria-hidden="true" /> 24h Meisterbetrieb · Alle 23 Wiener Bezirke &amp; Umland
@@ -76,8 +77,9 @@ function Index() {
         </div>
       </section>
 
-      <section id="stromausfall" className="bg-secondary">
-        <div className="mx-auto grid max-w-6xl items-start gap-6 px-4 py-14 lg:grid-cols-[1fr_2fr]">
+      <section id="stromausfall" className="relative bg-secondary">
+        <div className="pointer-events-none absolute inset-x-0 top-[35%] mx-auto hidden max-w-6xl lg:block"><div className="relative w-1/3"><LightStory /></div></div>
+        <div className="relative mx-auto grid max-w-6xl items-start gap-6 px-4 py-14 lg:grid-cols-[1fr_2fr]">
           <Reveal>
             <p className="text-sm font-bold uppercase tracking-widest text-primary">Erstberater</p>
             <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">Stromausfall in Wien? Was ist passiert?</h2>
@@ -88,7 +90,6 @@ function Index() {
       </section>
 
       <section className="relative mx-auto max-w-6xl px-4 py-20">
-        <LightStory />
         <Reveal>
           <p className="text-sm font-bold uppercase tracking-widest text-primary">Leistungen</p>
           <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">Was wir für Sie tun</h2>

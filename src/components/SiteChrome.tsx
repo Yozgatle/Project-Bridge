@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Phone, MessageCircle, PhoneCall, X, Menu } from "lucide-react";
 const logoUrl = "/images/ceri-logo-from-chat.svg";
@@ -21,9 +21,24 @@ const navLinks = [
 
 export function Header() {
   const [menu, setMenu] = useState(false);
+  const isHome = useRouterState({ select: (st) => st.location.pathname === "/" });
+  const [atTop, setAtTop] = useState(true);
+  const [hidden, setHidden] = useState(false);
+  useEffect(() => {
+    let last = window.scrollY;
+    const onScroll = () => {
+      const y = window.scrollY;
+      setAtTop(y < 20);
+      if (Math.abs(y - last) > 6) { setHidden(y > last && y > 120); last = y; }
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const clear = isHome && atTop && !menu;
   return (
-    <header className="sticky top-0 z-40 bg-background/95 backdrop-blur">
-      <div className="bg-dark text-dark-foreground">
+    <header data-clear={clear || undefined} className={`site-header ${isHome ? "fixed inset-x-0" : "sticky"} top-0 z-40 transition-[transform,background-color,box-shadow] duration-300 ${hidden && !menu ? "-translate-y-full" : "translate-y-0"} ${clear ? "bg-transparent" : "bg-background/95 shadow-sm backdrop-blur"}`}>
+      <div className={clear ? "bg-brand-navy/70 text-dark-foreground backdrop-blur-sm" : "bg-dark text-dark-foreground"}>
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2 text-xs sm:text-sm">
           <span className="flex items-center gap-2">
             <span className="h-2 w-2 animate-pulse rounded-full bg-accent" aria-hidden="true" /> 24/7 Elektro-Notdienst in Wien & Umgebung
@@ -31,7 +46,7 @@ export function Header() {
 
         </div>
       </div>
-      <div className="border-b border-border">
+      <div className={clear ? "border-b border-transparent" : "border-b border-border"}>
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
           <Link to="/" className="flex items-center" aria-label="CERI – Startseite">
             <img src={logoUrl} alt="CERI" width={1015} height={600} className="h-auto w-[150px] shrink-0 object-contain sm:w-[180px] lg:w-[200px]" />
