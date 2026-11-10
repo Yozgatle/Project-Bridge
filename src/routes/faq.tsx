@@ -1,0 +1,5 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { FAQS, pageHead } from "@/lib/content";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+export const Route = createFileRoute("/faq")({staticData: { sitemap: true },  head: () => pageHead("Häufige Fragen zu Elektriker & Notdienst | CERI Wien", "Antworten zu Stromausfall, FI-Schalter, Anfahrt, Preisen, E-Befund und Wallbox in Wien und Umgebung."), component: Faq });
+function Faq() { return <section className="mx-auto max-w-3xl px-4 py-16"><p className="font-bold text-primary">CERI beantwortet Ihre Fragen</p><h1 className="mt-3 text-4xl font-extrabold">Elektrik, Kosten & Notdienst</h1><Accordion type="single" collapsible className="mt-8">{FAQS.map(([question, answer]) => <AccordionItem key={question} value={question}><AccordionTrigger className="text-left font-bold">{question}</AccordionTrigger><AccordionContent className="text-muted-foreground">{answer}</AccordionContent></AccordionItem>)}</Accordion></section>; }

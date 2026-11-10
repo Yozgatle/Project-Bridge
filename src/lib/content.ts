@@ -1,0 +1,46 @@
+export const SERVICE_DETAILS = [
+  { slug: "elektroinstallationen", title: "Elektroinstallationen", intro: "Neue Leitungen, zusätzliche Steckdosen und sichere Beleuchtung – passend zu Ihrem Alltag.", scope: ["Bestandsaufnahme und Planung der Stromkreise", "Installation von Leitungen, Steckdosen und Beleuchtung", "Prüfung der Schutzmaßnahmen und Dokumentation"], preparation: "Grundriss, gewünschte Anschlüsse und Fotos helfen bei der Planung. Bei Sanierungen stimmen wir die Arbeiten mit den anderen Gewerken ab." },
+  { slug: "verteilerbau", title: "Verteilerbau", intro: "Ein übersichtlicher Verteiler schafft die Grundlage für eine sichere und erweiterbare Elektroanlage.", scope: ["Prüfung des vorhandenen Verteilers und der Anschlussleistung", "Auslegung von FI- und Leitungsschutzschaltern", "Beschriftung, Messung und Übergabe"], preparation: "Schicken Sie ein Foto des geschlossenen Verteilers und nennen Sie geplante neue Verbraucher. Plombierte Bereiche bleiben dem Netzbetreiber vorbehalten." },
+  { slug: "e-befund", title: "E-Befund", intro: "Messungen und ein nachvollziehbarer Befund zum Zustand Ihrer elektrischen Anlage.", scope: ["Besichtigung der zugänglichen Anlage", "Prüfung von Schutzleiter, Isolation und FI-Schutz", "Messprotokoll mit festgestellten Mängeln"], preparation: "Bitte halten Sie vorhandene Pläne und ältere Befunde bereit. Reparaturen festgestellter Mängel werden separat vereinbart; die Anforderungen hängen vom Objekt und Anlass ab." },
+  { slug: "wallbox-e-mobilitaet", title: "Wallbox & E-Mobilität", intro: "Zuhause sicher laden – mit einer Wallbox, die zu Fahrzeug, Stellplatz und Hausanschluss passt.", scope: ["Prüfung von Anschlussleistung und Leitungsweg", "Planung von Absicherung, DC-Fehlerstromschutz und Lastmanagement", "Montage, Prüfung und Abstimmung mit dem zuständigen Netzbetreiber"], preparation: "Hilfreich sind Fotos von Verteiler und Stellplatz, die Entfernung dazwischen sowie die gewünschte Ladeleistung. In Gemeinschaftsanlagen klären Sie die erforderlichen Zustimmungen vorab." },
+  { slug: "24h-notdienst", title: "24/7 Notdienst", intro: "Hilfe bei Stromausfall, ausgelöstem FI-Schalter und elektrischen Störungen – in Wien und Umgebung.", scope: ["Telefonische Einordnung und Abstimmung der Anfahrt", "Fehlerdiagnose und sichere Eingrenzung", "Reparatur oder gesicherte Abschaltung mit Folgetermin"], preparation: "Bei Rauch oder Feuer zuerst den Gefahrenbereich verlassen und 122 rufen, bei Verletzten 144. Keine elektrischen Bauteile öffnen. Ankunftszeit und Kosten klären wir telefonisch." },
+  { slug: "fehlersuche-reparatur", title: "Fehlersuche & Reparatur", intro: "Nicht auf Verdacht tauschen: Wir grenzen die Ursache mit systematischen Messungen ein.", scope: ["Erfassung der Symptome und betroffenen Stromkreise", "Gezielte Messung von Isolation und Schutzmaßnahmen", "Austausch defekter Bauteile und Funktionsprüfung"], preparation: "Notieren Sie, wann die Störung auftritt und welche Geräte dann laufen. Defekte, warme oder verfärbte Anschlüsse nicht weiter benutzen und nicht selbst aufschrauben." },
+] as const;
+
+export const REGIONS = [
+  { slug: "wiener-neustadt", name: "Wiener Neustadt", zip: "2700", context: "Für Wohnungen im Zentrum, Einfamilienhäuser und Gewerbeobjekte planen wir den Einsatz nach Adresse und Umfang. Bei Projekten ist ein abgestimmter Besichtigungstermin besonders sinnvoll." },
+  { slug: "moedling", name: "Mödling", zip: "2340", context: "Von älteren Wohnhäusern bis zu neuen Anlagen: Bei Erweiterungen prüfen wir zuerst den Bestand und die vorhandenen Schutzmaßnahmen." },
+  { slug: "baden", name: "Baden", zip: "2500", context: "Bei Sanierungen und neuen Ladepunkten berücksichtigen wir vorhandene Leitungswege, Anschlussleistung und die Nutzung des Gebäudes." },
+  { slug: "klosterneuburg", name: "Klosterneuburg", zip: "3400", context: "Für Haus, Garten und Stellplatz stimmen wir Außeninstallationen und Ladeinfrastruktur auf den vorhandenen Anschluss ab." },
+  { slug: "schwechat", name: "Schwechat", zip: "2320", context: "Private und gewerbliche Einsätze stimmen wir auf Zugänglichkeit und Betriebszeiten ab, damit notwendige Abschaltungen planbar bleiben." },
+  { slug: "korneuburg", name: "Korneuburg", zip: "2100", context: "Bei Umbauten und zusätzlichen Verbrauchern prüfen wir die Reserven im Verteiler, bevor neue Stromkreise geplant werden." },
+  { slug: "stockerau", name: "Stockerau", zip: "2000", context: "Für Sanierung, Fehlersuche und E-Befund vereinbaren wir den Umfang vorab und klären die Anfahrtskosten zur konkreten Adresse." },
+  { slug: "purkersdorf", name: "Purkersdorf", zip: "3002", context: "Außensteckdosen, Beleuchtung und Leitungen in feuchten Bereichen benötigen passende Schutzmaßnahmen. Diese prüfen wir im Rahmen des vereinbarten Einsatzes." },
+  { slug: "tulln", name: "Tulln", zip: "3430", context: "Für größere Installationen und Wallboxen helfen Fotos und ein Grundriss, den Besichtigungstermin und die Materialplanung vorzubereiten." },
+  { slug: "brunn-am-gebirge", name: "Brunn am Gebirge", zip: "2345", context: "Ob Wohnung, Haus oder Betrieb: Erweiterungen werden auf die vorhandene Anlage abgestimmt und nach Ausführung geprüft." },
+] as const;
+
+export const FAQS = [
+  ["Ist der Notdienst rund um die Uhr erreichbar?", "Unser Notdienst ist rund um die Uhr erreichbar. Verfügbarkeit und Ankunftszeit klären wir im Telefonat anhand Ihrer Adresse und der aktuellen Einsatzlage."],
+  ["Was mache ich bei Rauch oder Brandgeruch?", "Bei Rauch oder Feuer verlassen Sie den Gefahrenbereich und rufen die Feuerwehr unter 122. Bei Verletzten rufen Sie 144. Berühren Sie keine beschädigten elektrischen Teile und verwenden Sie kein Wasser."],
+  ["Darf ich den FI-Schalter wieder einschalten?", "Nur wenn keine Hinweise auf Rauch, Wärme, Wasser oder beschädigte Bauteile vorliegen. Löst er erneut aus, nicht wiederholt einschalten und niemals überbrücken. Lassen Sie die Ursache fachlich prüfen."],
+  ["Was tun, wenn die ganze Straße keinen Strom hat?", "Eine großflächige Störung gehört zum zuständigen Netzbetreiber. In Wien erreichen Sie die Strom-Störungshotline der Wiener Netze unter 0800 500 600. Außerhalb Wiens prüfen Sie den Netzbetreiber auf Ihrer Stromrechnung."],
+  ["Wie schnell kommt ein Elektriker?", "Eine feste Minutenzusage ist ohne Adresse und aktuelle Einsatzlage nicht seriös. Wir nennen Ihnen telefonisch eine Einschätzung und stimmen den Einsatz ab."],
+  ["Was ist im Kleineinsatz enthalten?", "Der angezeigte Richtpreis umfasst die Anfahrt in Wien und bis zu 60 Minuten vor Ort zu den angegebenen Geschäftszeiten. Material, Mehrzeit und Sonderleistungen werden separat abgestimmt."],
+  ["Gelten die Wiener Anfahrtspreise auch im Umland?", "Nein, für Orte außerhalb Wiens klären wir die konkrete Anfahrt und mögliche Zuschläge vor der Beauftragung. Die Wiener Pauschale gilt nicht automatisch im Umland."],
+  ["Bekomme ich vor Beginn ein Angebot?", "Bei planbaren Arbeiten vereinbaren wir den Umfang und die Kosten vor Beginn. Größere Projekte kalkulieren wir anhand von Fotos, Plänen oder einer Besichtigung."],
+  ["Was umfasst ein E-Befund?", "Die vereinbarte Anlage wird besichtigt und gemessen. Der Befund dokumentiert den Zustand und festgestellte Mängel. Erforderliche Reparaturen sind nicht automatisch im Befundpreis enthalten."],
+  ["Welche Wallbox passt zu meinem Haus?", "Das hängt von Fahrzeug, Anschlussleistung, Leitungsweg und vorhandenen Schutzmaßnahmen ab. Wir prüfen auch, ob Lastmanagement oder zusätzliche Abstimmungen nötig sind."],
+  ["Kann ich Fotos vorab schicken?", "Ja, Fotos des geschlossenen Verteilers, des Stellplatzes oder sichtbarer Schäden helfen bei der Vorbereitung. Öffnen Sie dafür keine Abdeckungen und gehen Sie kein Risiko ein."],
+  ["Muss ich als Mieter die Hausverwaltung informieren?", "Bei Arbeiten an der festen Anlage und bei größeren Änderungen sollten Zuständigkeit und Zustimmung vorab mit Vermieter oder Hausverwaltung geklärt werden. Bei akuter Gefahr geht die Sicherheit vor."],
+  ["Wie läuft eine Anfrage über den Erstberater ab?", "Nach Ihrer Auswahl ergänzen Sie Name, Telefonnummer und bei Bedarf die Adresse. Mit Anfrage senden werden die Angaben zusammen an CERI übermittelt; ein Rückruf kann damit abgestimmt werden."],
+  ["Ersetzt der digitale Erstberater eine Prüfung?", "Nein. Er gibt eine erste Orientierung, aber keine gesicherte Diagnose. Eine fachgerechte Beurteilung erfordert eine Prüfung und gegebenenfalls Messungen vor Ort."],
+] as const;
+
+export function pageHead(title: string, description: string) {
+  return { meta: [{ title }, { name: "description", content: description }, { property: "og:title", content: title }, { property: "og:description", content: description }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] };
+}
+
+export function advisorRequestMessage(choices: string[], description: string, title: string) {
+  return [choices.length ? `Auswahl: ${choices.join(" → ")}` : "", description.trim(), `Ersteinschätzung: ${title}`, "Bitte kontaktieren Sie mich zur Abstimmung des Einsatzes."].filter(Boolean).join("\n").slice(0, 2000);
+}
