@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { TURNSTILE_SITE_KEY } from "@/lib/site";
 
 declare global {
   interface Window {
@@ -41,7 +42,7 @@ function loadTurnstile(): Promise<void> {
 export function Turnstile({ onToken }: { onToken: (token: string) => void }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const widgetIdRef = useRef<string | null>(null);
-  const siteKey = import.meta.env.VITE_TURNSTILE_SITE_KEY;
+  const siteKey = (import.meta.env["VITE_TURNSTILE_SITE_KEY"] as string | undefined) || TURNSTILE_SITE_KEY;
   const onTokenRef = useRef(onToken);
   onTokenRef.current = onToken;
 

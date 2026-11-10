@@ -16,6 +16,9 @@ export const SITE = {
   address: "Hungereckstraße 41, 1230 Wien",
 };
 
+// Öffentlicher Cloudflare-Turnstile-Websiteschlüssel (kein Geheimnis). Leer = Spam-Schutz nicht konfiguriert.
+export const TURNSTILE_SITE_KEY = "";
+
 // GISA-Zahl und Firmenbuch fehlen noch – vom Inhaber nachzureichen.
 export const COMPANY = {
   legalName: "Savas Çeri e.U.",
