@@ -49,7 +49,7 @@ function Index() {
   return (
     <>
       <section className="relative overflow-hidden">
-        <img src={hero} alt="Elektriker arbeitet an einem Verteiler in Wien" width={1600} height={1008} className="block h-[46svh] min-h-[300px] w-full object-cover object-[85%_center] md:absolute md:inset-0 md:h-full md:min-h-0 md:object-center" />
+        <img src={hero} alt="Elektriker arbeitet an einem Verteiler in Wien" width={1600} height={1008} className="mt-[89px] block h-[42svh] min-h-[280px] w-full object-cover object-[85%_center] md:absolute md:mt-0 md:inset-0 md:h-full md:min-h-0 md:object-center" />
         <div className="relative mx-auto flex max-w-6xl flex-col px-4 pb-8 pt-5 md:min-h-[100svh] md:justify-center md:py-16 md:max-w-none md:px-[max(1rem,calc((100vw-1280px)/2+1rem))]">
           <div className="relative">
             <p className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-wider text-brand-navy/80 md:text-sm">
