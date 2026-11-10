@@ -50,25 +50,25 @@ function Index() {
     <>
       <section className="relative overflow-hidden">
         <img src={hero} alt="Elektriker arbeitet an einem Verteiler in Wien" width={1600} height={1008} className="absolute inset-0 h-full w-full object-cover object-center" />
-        <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-center px-4 py-16 md:max-w-none md:px-[max(1rem,calc((100vw-1280px)/2+1rem))]">
-          <div className="relative">
-            <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-brand-navy/80 md:text-sm">
+        <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-4 pb-24 pt-28 md:justify-center md:py-16 md:max-w-none md:px-[max(1rem,calc((100vw-1280px)/2+1rem))]">
+          <div className="relative rounded-2xl bg-background/75 p-4 backdrop-blur-sm md:rounded-none md:bg-transparent md:p-0 md:backdrop-blur-none">
+            <p className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-wider text-brand-navy/80 md:text-sm">
               <span className="h-[2px] w-10 bg-primary" aria-hidden="true" /> 24h Meisterbetrieb · Alle 23 Wiener Bezirke &amp; Umland
             </p>
-            <h1 className="mt-4 max-w-2xl text-4xl font-extrabold leading-[1.05] text-brand-navy md:text-6xl">
+            <h1 className="mt-3 max-w-2xl text-[2rem] font-extrabold leading-[1.05] text-brand-navy sm:text-4xl md:mt-4 md:text-6xl">
               Elektriker Wien – Soforthilfe bei <RotatingWord />
             </h1>
-            <p className="mt-5 max-w-lg text-base font-medium text-brand-navy/85 md:text-lg">In 30–45 Min. bei Ihnen vor Ort. Transparente Festpreise, faire Anfahrt und direkte Fehlerbehebung.</p>
-            <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-brand-navy">
+            <p className="mt-3 max-w-lg text-sm font-medium md:mt-5 md:text-base lg:text-lg text-brand-navy/85 md:text-lg">In 30–45 Min. bei Ihnen vor Ort. Transparente Festpreise, faire Anfahrt und direkte Fehlerbehebung.</p>
+            <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-xs font-semibold md:mt-4 md:gap-x-5 md:text-sm text-brand-navy">
               {["Keine versteckten Kosten", "Meisterbetrieb", "24/7 erreichbar"].map((t) => (
                 <li key={t} className="flex items-center gap-1.5"><Check className="h-4 w-4 text-primary" aria-hidden="true" />{t}</li>
               ))}
             </ul>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href={SITE.phoneHref} className="hero-cta btn-press inline-flex items-center gap-2 rounded-lg px-6 py-4 text-lg font-extrabold">
+            <div className="mt-5 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-3 md:mt-8">
+              <a href={SITE.phoneHref} className="hero-cta btn-press inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-base font-extrabold md:px-6 md:py-4 md:text-lg">
                 <Phone className="h-5 w-5" aria-hidden="true" /> Jetzt Notdienst anrufen: {SITE.phone}
               </a>
-              <a href="#stromausfall" onClick={(e) => { e.preventDefault(); document.getElementById("stromausfall")?.scrollIntoView({ behavior: "smooth" }); }} className="btn-press inline-flex items-center gap-2 rounded-lg border border-brand-navy/20 bg-background/40 px-6 py-4 font-bold text-brand-navy backdrop-blur-md transition-colors hover:bg-background/70">
+              <a href="#stromausfall" onClick={(e) => { e.preventDefault(); document.getElementById("stromausfall")?.scrollIntoView({ behavior: "smooth" }); }} className="btn-press inline-flex items-center justify-center gap-2 rounded-lg border border-brand-navy/20 bg-background/40 px-5 py-3 font-bold md:px-6 md:py-4 text-brand-navy backdrop-blur-md transition-colors hover:bg-background/70">
                 Erstberater starten <ArrowDown className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>

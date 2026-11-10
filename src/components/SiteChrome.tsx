@@ -58,7 +58,7 @@ export function Header() {
             ))}
           </nav>
           <div className="flex items-center gap-2">
-            <CallbackButton className="btn-press hidden h-9 rounded-full border border-primary px-4 text-xs font-bold text-primary xl:inline-flex" />
+            <CallbackButton className="btn-press hidden h-9 rounded-full border border-primary bg-background/85 px-4 text-xs font-bold text-primary backdrop-blur xl:inline-flex" />
             <a href={SITE.phoneHref} aria-label="Jetzt anrufen" className="btn-press inline-flex h-9 items-center gap-2 rounded-full bg-primary px-3 text-xs font-bold text-primary-foreground sm:px-4">
               <Phone className="h-4 w-4" aria-hidden="true" /> <span className="hidden sm:inline">Jetzt anrufen</span>
             </a>
