@@ -49,7 +49,7 @@ export function Header() {
       </div>
       <div className={clear ? "border-b border-transparent" : "border-b border-dark-foreground/10"}>
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
-          <Link to="/" className="flex items-center" aria-label="CERI – Startseite">
+          <Link to="/" className={`flex items-center ${clear ? "" : "rounded-xl bg-white px-2.5 py-0.5"}`} aria-label="CERI – Startseite">
             <img src={logoUrl} alt="CERI" width={1015} height={600} className="h-auto w-[150px] shrink-0 drop-shadow object-contain sm:w-[180px] lg:w-[200px]" />
           </Link>
           <nav className="hidden gap-4 text-sm font-semibold lg:flex" aria-label="Hauptnavigation">
