@@ -173,3 +173,9 @@
 @media (prefers-reduced-motion: reduce) { .hero-word, .hero-dot, .hero-cta:hover::after { animation: none; } }
 
 
+
+/* Header nav: white over hero, CERI orange on hover */
+.site-header[data-clear] nav[aria-label="Hauptnavigation"] a { color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,.55); }
+.site-header nav[aria-label="Hauptnavigation"] a:hover { color: var(--color-primary) !important; }
+/* Hero text readable on photo without fading the image */
+.hero-text h1, .hero-text p, .hero-text li { text-shadow: 0 0 2px rgba(255,255,255,.95), 0 0 12px rgba(255,255,255,.85), 0 0 28px rgba(255,255,255,.6); }
