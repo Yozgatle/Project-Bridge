@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Phone, AlertTriangle, Zap, PlugZap, FileCheck, Car, Wrench, Siren } from "lucide-react";
+import { Phone, AlertTriangle, Zap, PlugZap, FileCheck, Car, Wrench, Check, ArrowDown } from "lucide-react";
 import { SITE, SERVICES, BEZIRKE } from "@/lib/site";
 import { Erstberater } from "@/components/Erstberater";
 import { Reveal } from "@/components/Reveal";
@@ -53,13 +53,24 @@ function Index() {
         <div className="hero-vignette absolute inset-0" aria-hidden="true" />
         <div className="relative mx-auto flex min-h-[78svh] max-w-6xl flex-col justify-center px-4 py-16 md:aspect-[1600/1008] md:max-h-[90vh] md:min-h-0 md:max-w-none md:px-[max(1rem,calc((100vw-1280px)/2+1rem))]">
           <div className="relative">
-            <h1 className="max-w-2xl text-3xl font-extrabold leading-tight text-brand-navy md:text-5xl">
-              Elektriker Wien – 24h Notdienst bei <RotatingWord />
+            <p className="flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-brand-navy/80 md:text-sm">
+              <span className="h-[2px] w-10 bg-primary" aria-hidden="true" /> 24h Meisterbetrieb · Alle 23 Wiener Bezirke &amp; Umland
+            </p>
+            <h1 className="mt-4 max-w-2xl text-4xl font-extrabold leading-[1.05] text-brand-navy md:text-6xl">
+              Elektriker Wien – Soforthilfe bei <RotatingWord />
             </h1>
-            <p className="mt-4 max-w-lg text-base font-medium text-brand-navy/85 md:text-lg">Rasche Hilfe bei Stromausfall, FI-Schalter, Kurzschluss &amp; E-Befund – in allen 23 Wiener Bezirken und Umgebung.</p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a href={SITE.phoneHref} className="hero-cta btn-press inline-flex items-center gap-2 rounded-lg px-6 py-3.5 font-extrabold">
-                <Siren className="h-5 w-5" aria-hidden="true" /> Jetzt 24h Elektriker in Wien anrufen: {SITE.phone}
+            <p className="mt-5 max-w-lg text-base font-medium text-brand-navy/85 md:text-lg">In 30–45 Min. bei Ihnen vor Ort. Transparente Festpreise, faire Anfahrt und direkte Fehlerbehebung.</p>
+            <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-brand-navy">
+              {["Keine versteckten Kosten", "Meisterbetrieb", "24/7 erreichbar"].map((t) => (
+                <li key={t} className="flex items-center gap-1.5"><Check className="h-4 w-4 text-primary" aria-hidden="true" />{t}</li>
+              ))}
+            </ul>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a href={SITE.phoneHref} className="hero-cta btn-press inline-flex items-center gap-2 rounded-lg px-6 py-4 text-lg font-extrabold">
+                <Phone className="h-5 w-5" aria-hidden="true" /> Jetzt Notdienst anrufen: {SITE.phone}
+              </a>
+              <a href="#stromausfall" onClick={(e) => { e.preventDefault(); document.getElementById("stromausfall")?.scrollIntoView({ behavior: "smooth" }); }} className="btn-press inline-flex items-center gap-2 rounded-lg border border-brand-navy/20 bg-background/40 px-6 py-4 font-bold text-brand-navy backdrop-blur-md transition-colors hover:bg-background/70">
+                Erstberater starten <ArrowDown className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
           </div>
