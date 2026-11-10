@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
 import { Phone, AlertTriangle, Zap, PlugZap, FileCheck, Car, Wrench, Siren } from "lucide-react";
 import { SITE, SERVICES, BEZIRKE } from "@/lib/site";
 import { Erstberater } from "@/components/Erstberater";
@@ -47,14 +48,20 @@ const icons = [PlugZap, Zap, FileCheck, Car, AlertTriangle, Wrench];
 function Index() {
   return (
     <>
-      <section className="relative overflow-hidden text-slate-950">
+      <section className="relative overflow-hidden">
         <img src={hero} alt="Elektriker arbeitet an einem Verteiler in Wien" width={1600} height={1008} className="absolute inset-0 h-full w-full object-cover object-center" />
+        <div className="hero-vignette absolute inset-0" aria-hidden="true" />
         <div className="relative mx-auto flex min-h-[78svh] max-w-6xl flex-col justify-center px-4 py-16 md:aspect-[1600/1008] md:max-h-[90vh] md:min-h-0 md:max-w-none md:px-[max(1rem,calc((100vw-1280px)/2+1rem))]">
-          <div>
-            <h1 className="mt-4 max-w-2xl text-3xl font-extrabold leading-tight [text-shadow:0_1px_12px_rgba(255,255,255,0.95)] md:text-5xl">Elektriker Wien – 24h Notdienst bei Stromausfall</h1>
-            <p className="mt-4 max-w-lg text-base [text-shadow:0_1px_9px_rgba(255,255,255,0.98)] md:text-lg">Rasche Hilfe bei Stromausfall, FI-Schalter, Kurzschluss &amp; E-Befund – in allen 23 Wiener Bezirken und Umgebung.</p>
+          <div className="relative">
+            <span className="hero-badge inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-bold">
+              <span className="hero-dot" aria-hidden="true" /> ⚡ 24/7 Notdienst – In 30–45 Min. vor Ort
+            </span>
+            <h1 className="mt-5 max-w-2xl text-3xl font-extrabold leading-tight text-brand-navy md:text-5xl">
+              Elektriker Wien – 24h Notdienst bei <RotatingWord />
+            </h1>
+            <p className="mt-4 max-w-lg text-base font-medium text-brand-navy/85 md:text-lg">Rasche Hilfe bei Stromausfall, FI-Schalter, Kurzschluss &amp; E-Befund – in allen 23 Wiener Bezirken und Umgebung.</p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <a href={SITE.phoneHref} className="btn-press inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3.5 font-extrabold text-accent-foreground">
+              <a href={SITE.phoneHref} className="hero-cta btn-press inline-flex items-center gap-2 rounded-lg px-6 py-3.5 font-extrabold">
                 <Siren className="h-5 w-5" aria-hidden="true" /> Jetzt 24h Elektriker in Wien anrufen: {SITE.phone}
               </a>
             </div>
@@ -150,5 +157,20 @@ function Index() {
         </Reveal>
       </section>
     </>
+  );
+}
+
+const WORDS = ["Stromausfall?", "FI-Schalter gefallen?", "Kurzschluss?", "E-Befund nötig?"];
+
+function RotatingWord() {
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    const t = setInterval(() => setI((n) => (n + 1) % WORDS.length), 2500);
+    return () => clearInterval(t);
+  }, []);
+  return (
+    <span className="block min-h-[1.25em]" aria-live="polite">
+      <span key={i} className="hero-word text-gradient-ceri inline-block">{WORDS[i]}</span>
+    </span>
   );
 }
