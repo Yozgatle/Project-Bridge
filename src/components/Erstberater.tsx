@@ -295,7 +295,7 @@ export function Erstberater() {
   }
 
   return (
-    <div className="rounded-lg border border-border bg-card p-5 shadow-xl md:p-7">
+    <div className="rounded-lg border border-border bg-card p-4 shadow-xl md:p-7">
       <p className="text-xs font-bold uppercase tracking-widest text-primary">Digitaler Erstberater</p>
 
       {/* Fortschrittsanzeige */}
@@ -315,8 +315,8 @@ export function Erstberater() {
       {!answer ? (
         mode === "wizard" ? (
           <>
-            <h3 className="mt-4 text-2xl font-extrabold">{currentNode.q}</h3>
-            <div className="mt-5 grid gap-3 sm:grid-cols-2" role="group" aria-label="Antwortmöglichkeiten">
+            <h3 className="mt-3 text-xl font-extrabold md:mt-4 md:text-2xl">{currentNode.q}</h3>
+            <div className="mt-4 grid gap-2.5 sm:grid-cols-2 md:mt-5 md:gap-3" role="group" aria-label="Antwortmöglichkeiten">
               {currentNode.options.map((o) => {
                 const Icon = o.icon;
                 return (
@@ -324,9 +324,9 @@ export function Erstberater() {
                     key={o.label}
                     type="button"
                     onClick={() => choose(o)}
-                    variant="outline" className="btn-press h-auto whitespace-normal justify-start flex items-start gap-3 rounded-lg border border-border bg-secondary px-4 py-3.5 text-left transition-colors hover:border-primary hover:bg-background"
+                    variant="outline" className="btn-press h-auto whitespace-normal justify-start flex items-start gap-3 rounded-lg border border-border bg-secondary px-3 py-3 text-left md:px-4 md:py-3.5 transition-colors hover:border-primary hover:bg-background"
                   >
-                    <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary">
+                    <span className="grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-primary/10 text-primary md:h-10 md:w-10">
                       <Icon className="h-5 w-5" aria-hidden="true" />
                     </span>
                     <span>

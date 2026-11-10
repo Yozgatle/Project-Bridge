@@ -33,17 +33,17 @@ const FIVE_STAR_REVIEWS = [
 
 function Card([Icon, title, text]: (typeof ITEMS)[number]) {
   return (
-    <div className="mx-3 flex w-72 shrink-0 items-center gap-4 rounded-2xl bg-card p-5 ring-1 ring-border">
+    <div className="mx-2 flex w-60 shrink-0 items-center gap-3 rounded-2xl bg-card p-4 md:mx-3 md:w-72 md:gap-4 md:p-5 ring-1 ring-border">
       <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-accent/15 text-accent"><Icon className="h-6 w-6" aria-hidden /></span>
-      <div><p className="text-xl font-extrabold">{title}</p><p className="text-sm opacity-75">{text}</p></div>
+      <div><p className="text-lg font-extrabold md:text-xl">{title}</p><p className="text-sm opacity-75">{text}</p></div>
     </div>
   );
 }
 
 export function TrustSection() {
   return (
-    <section className="border-y-4 border-accent bg-secondary py-14 text-foreground">
-      <h2 className="mb-8 text-center text-2xl font-extrabold md:text-3xl">Warum Ceri?</h2>
+    <section className="border-y-4 border-accent bg-secondary py-10 text-foreground md:py-14">
+      <h2 className="mb-5 md:mb-8 text-center text-2xl font-extrabold md:text-3xl">Warum Ceri?</h2>
       <div className="marquee-mask overflow-hidden">
         <div className="marquee-right flex w-max">
           {[...ITEMS, ...ITEMS].map((it, i) => <div key={i} aria-hidden={i >= ITEMS.length}>{Card(it)}</div>)}
@@ -56,15 +56,15 @@ export function TrustSection() {
 export function Reviews({ place }: { place?: string }) {
   return (
     <section className="border-y border-border bg-secondary" aria-labelledby="reviews-heading">
-      <div className="mx-auto max-w-6xl px-4 py-12">
+      <div className="mx-auto max-w-6xl px-4 py-10 md:py-12">
         <p className="text-sm font-bold text-primary">Kundenstimmen{place ? ` · ${place}` : ""}</p>
         <h2 id="reviews-heading" className="mt-2 text-2xl font-extrabold">5-Sterne-Bewertungen auf MyHammer</h2>
         <p className="mt-3 max-w-3xl text-sm text-muted-foreground">
          5-Sterne-Rezensionen von Ceri Elektroinstallationen auf MyHammer.
         </p>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
+        <div className="mt-5 grid gap-3 md:mt-6 md:gap-4 md:grid-cols-2">
           {FIVE_STAR_REVIEWS.map((review, index) => (
-            <article key={`${review.date}-${index}`} className="rounded-xl border border-border bg-background p-5">
+            <article key={`${review.date}-${index}`} className="rounded-xl border border-border bg-background p-4 md:p-5">
               <div className="flex items-center gap-1 text-amber-500" aria-label="5 von 5 Sternen">
                 {Array.from({ length: 5 }, (_, starIndex) => (
                   <Star key={starIndex} className="h-4 w-4 fill-current" aria-hidden="true" />

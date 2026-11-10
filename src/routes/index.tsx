@@ -50,25 +50,25 @@ function Index() {
     <>
       <section className="relative overflow-hidden">
         <img src={hero} alt="Elektriker arbeitet an einem Verteiler in Wien" width={1600} height={1008} className="absolute inset-0 h-full w-full object-cover object-center" />
-        <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-4 pb-24 pt-28 md:justify-center md:py-16 md:max-w-none md:px-[max(1rem,calc((100vw-1280px)/2+1rem))]">
-          <div className="relative rounded-2xl bg-background/75 p-4 backdrop-blur-sm md:rounded-none md:bg-transparent md:p-0 md:backdrop-blur-none">
+        <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-4 pb-[5.5rem] pt-24 md:justify-center md:py-16 md:max-w-none md:px-[max(1rem,calc((100vw-1280px)/2+1rem))]">
+          <div className="relative rounded-2xl bg-background/80 p-4 shadow-lg backdrop-blur-sm md:shadow-none md:rounded-none md:bg-transparent md:p-0 md:backdrop-blur-none">
             <p className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-wider text-brand-navy/80 md:text-sm">
               <span className="h-[2px] w-10 bg-primary" aria-hidden="true" /> 24h Meisterbetrieb · Alle 23 Wiener Bezirke &amp; Umland
             </p>
-            <h1 className="mt-3 max-w-2xl text-[2rem] font-extrabold leading-[1.05] text-brand-navy sm:text-4xl md:mt-4 md:text-6xl">
+            <h1 className="mt-2.5 max-w-2xl text-[1.7rem] font-extrabold leading-[1.08] text-brand-navy sm:text-4xl md:mt-4 md:text-6xl">
               Elektriker Wien – Soforthilfe bei <RotatingWord />
             </h1>
-            <p className="mt-3 max-w-lg text-sm font-medium md:mt-5 md:text-base lg:text-lg text-brand-navy/85 md:text-lg">In 30–45 Min. bei Ihnen vor Ort. Transparente Festpreise, faire Anfahrt und direkte Fehlerbehebung.</p>
-            <ul className="mt-3 flex flex-wrap gap-x-4 gap-y-1.5 text-xs font-semibold md:mt-4 md:gap-x-5 md:text-sm text-brand-navy">
+            <p className="mt-2.5 max-w-lg text-[13px] leading-snug font-medium md:leading-normal md:mt-5 md:text-base lg:text-lg text-brand-navy/85 md:text-lg">In 30–45 Min. bei Ihnen vor Ort. Transparente Festpreise, faire Anfahrt und direkte Fehlerbehebung.</p>
+            <ul className="mt-2.5 flex flex-wrap gap-x-3 gap-y-1 text-xs font-semibold md:mt-4 md:gap-x-5 md:text-sm text-brand-navy">
               {["Keine versteckten Kosten", "Meisterbetrieb", "24/7 erreichbar"].map((t) => (
-                <li key={t} className="flex items-center gap-1.5"><Check className="h-4 w-4 text-primary" aria-hidden="true" />{t}</li>
+                <li key={t} className="flex items-center gap-1"><Check className="h-3.5 w-3.5 text-primary md:h-4 md:w-4" aria-hidden="true" />{t}</li>
               ))}
             </ul>
-            <div className="mt-5 flex flex-col gap-2.5 sm:flex-row sm:flex-wrap sm:gap-3 md:mt-8">
-              <a href={SITE.phoneHref} className="hero-cta btn-press inline-flex items-center justify-center gap-2 rounded-lg px-5 py-3 text-base font-extrabold md:px-6 md:py-4 md:text-lg">
-                <Phone className="h-5 w-5" aria-hidden="true" /> Jetzt Notdienst anrufen: {SITE.phone}
+            <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-3 md:mt-8">
+              <a href={SITE.phoneHref} className="hero-cta btn-press inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg px-4 py-3 text-[15px] font-extrabold md:whitespace-normal md:px-6 md:py-4 md:text-lg">
+                <Phone className="h-5 w-5 shrink-0" aria-hidden="true" /> <span className="md:hidden">Notdienst: {SITE.phone}</span><span className="hidden md:inline">Jetzt Notdienst anrufen: {SITE.phone}</span>
               </a>
-              <a href="#stromausfall" onClick={(e) => { e.preventDefault(); document.getElementById("stromausfall")?.scrollIntoView({ behavior: "smooth" }); }} className="btn-press inline-flex items-center justify-center gap-2 rounded-lg border border-brand-navy/20 bg-background/40 px-5 py-3 font-bold md:px-6 md:py-4 text-brand-navy backdrop-blur-md transition-colors hover:bg-background/70">
+              <a href="#stromausfall" onClick={(e) => { e.preventDefault(); document.getElementById("stromausfall")?.scrollIntoView({ behavior: "smooth" }); }} className="btn-press inline-flex items-center justify-center gap-2 rounded-lg border border-brand-navy/20 bg-background/40 px-4 py-2.5 text-sm font-bold md:px-6 md:text-base md:py-4 text-brand-navy backdrop-blur-md transition-colors hover:bg-background/70">
                 Erstberater starten <ArrowDown className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
@@ -78,27 +78,27 @@ function Index() {
 
       <section id="stromausfall" className="relative bg-secondary">
         <div className="pointer-events-none absolute inset-x-0 top-[35%] mx-auto hidden max-w-6xl lg:block"><div className="relative w-1/3"><LightStory /></div></div>
-        <div className="relative mx-auto grid max-w-6xl items-start gap-6 px-4 py-14 lg:grid-cols-[1fr_2fr]">
+        <div className="relative mx-auto grid max-w-6xl items-start gap-5 px-4 py-10 md:gap-6 md:py-14 lg:grid-cols-[1fr_2fr]">
           <Reveal>
             <p className="text-sm font-bold uppercase tracking-widest text-primary">Erstberater</p>
-            <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">Stromausfall in Wien? Was ist passiert?</h2>
-            <p className="mt-4 text-muted-foreground">Kein Strom, FI-Schalter fällt oder Kurzschluss – ein paar Klicks und Sie wissen, wie dringend es ist.</p>
+            <h2 className="mt-2 text-2xl font-extrabold sm:text-3xl md:text-4xl">Stromausfall in Wien? Was ist passiert?</h2>
+            <p className="mt-3 text-sm text-muted-foreground md:mt-4 md:text-base">Kein Strom, FI-Schalter fällt oder Kurzschluss – ein paar Klicks und Sie wissen, wie dringend es ist.</p>
           </Reveal>
           <Erstberater />
         </div>
       </section>
 
-      <section className="relative mx-auto max-w-6xl px-4 py-20">
+      <section className="relative mx-auto max-w-6xl px-4 py-12 md:py-20">
         <Reveal>
           <p className="text-sm font-bold uppercase tracking-widest text-primary">Leistungen</p>
-          <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">Was wir für Sie tun</h2>
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <h2 className="mt-2 text-2xl font-extrabold sm:text-3xl md:text-4xl">Was wir für Sie tun</h2>
+          <div className="mt-6 grid gap-3 sm:grid-cols-2 md:mt-10 md:gap-4 lg:grid-cols-3">
             {SERVICES.map((s, i) => {
               const Icon = icons[i] ?? Zap;
               return (
-                <Link key={s.title} to="/leistungen/$slug" params={{ slug: SERVICE_DETAILS[i]?.slug ?? "elektroinstallationen" }} className="card-hover group flex items-center gap-4 rounded-xl bg-card p-5 ring-1 ring-border transition-colors hover:border-primary hover:bg-primary/5">
-                  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary"><Icon className="h-6 w-6" aria-hidden="true" /></span>
-                  <h3 className="text-lg font-bold group-hover:text-primary">{s.title}</h3>
+                <Link key={s.title} to="/leistungen/$slug" params={{ slug: SERVICE_DETAILS[i]?.slug ?? "elektroinstallationen" }} className="card-hover group flex items-center gap-3 rounded-xl bg-card p-3.5 ring-1 md:gap-4 md:p-5 ring-border transition-colors hover:border-primary hover:bg-primary/5">
+                  <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-primary/10 md:h-12 md:w-12 text-primary"><Icon className="h-5 w-5 md:h-6 md:w-6" aria-hidden="true" /></span>
+                  <h3 className="text-base font-bold md:text-lg group-hover:text-primary">{s.title}</h3>
                 </Link>
               );
             })}
@@ -112,25 +112,25 @@ function Index() {
       <Gallery />
 
       <section className="bg-secondary">
-        <div className="mx-auto max-w-6xl px-4 py-20">
+        <div className="mx-auto max-w-6xl px-4 py-12 md:py-20">
           <Reveal>
             <p className="text-sm font-bold uppercase tracking-widest text-primary">Faire Preise</p>
-            <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">Sie wissen vorher, was es kostet.</h2>
-            <div className="mt-10"><Prices /></div>
+            <h2 className="mt-2 text-2xl font-extrabold sm:text-3xl md:text-4xl">Sie wissen vorher, was es kostet.</h2>
+            <div className="mt-6 md:mt-10"><Prices /></div>
             <Link to="/preise" className="mt-6 inline-block font-bold text-primary underline underline-offset-4">Alle Preise ansehen</Link>
           </Reveal>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-20">
+      <section className="mx-auto max-w-6xl px-4 py-12 md:py-20">
         <Reveal>
-          <h2 className="text-3xl font-extrabold md:text-4xl">In ganz Wien &amp; Umgebung</h2>
-          <div className="mt-8 flex flex-wrap gap-2">
+          <h2 className="text-2xl font-extrabold sm:text-3xl md:text-4xl">In ganz Wien &amp; Umgebung</h2>
+          <div className="mt-5 flex flex-wrap gap-2 md:mt-8">
             {BEZIRKE.slice(0, 10).map((b) => (
-              <Link key={b.slug} to="/bezirke/$slug" params={{ slug: b.slug }} className="btn-press rounded-full bg-secondary px-4 py-2 text-sm font-semibold hover:bg-primary hover:text-primary-foreground">{b.name}</Link>
+              <Link key={b.slug} to="/bezirke/$slug" params={{ slug: b.slug }} className="btn-press rounded-full bg-secondary px-3 py-1.5 text-sm md:px-4 md:py-2 font-semibold hover:bg-primary hover:text-primary-foreground">{b.name}</Link>
             ))}
             {REGIONS.slice(0, 3).map((r) => (
-              <Link key={r.slug} to="/umgebung/$slug" params={{ slug: r.slug }} className="btn-press rounded-full bg-secondary px-4 py-2 text-sm font-semibold hover:bg-primary hover:text-primary-foreground">{r.name}</Link>
+              <Link key={r.slug} to="/umgebung/$slug" params={{ slug: r.slug }} className="btn-press rounded-full bg-secondary px-3 py-1.5 text-sm md:px-4 md:py-2 font-semibold hover:bg-primary hover:text-primary-foreground">{r.name}</Link>
             ))}
           </div>
           <Link to="/bezirke" className="mt-6 inline-block font-bold text-primary underline underline-offset-4">Alle 23 Bezirke &amp; Umland</Link>
@@ -138,10 +138,10 @@ function Index() {
       </section>
 
       <section className="bg-secondary">
-        <div className="mx-auto max-w-6xl px-4 py-20">
+        <div className="mx-auto max-w-6xl px-4 py-12 md:py-20">
           <Reveal>
-            <h2 className="text-3xl font-extrabold md:text-4xl">Häufige Fragen</h2>
-            <Accordion type="single" collapsible className="mt-8">
+            <h2 className="text-2xl font-extrabold sm:text-3xl md:text-4xl">Häufige Fragen</h2>
+            <Accordion type="single" collapsible className="mt-4 md:mt-8">
               {FAQS.slice(0, 4).map(([q, a]) => (
                 <AccordionItem key={q} value={q}>
                   <AccordionTrigger className="text-left font-bold">{q}</AccordionTrigger>
@@ -154,11 +154,11 @@ function Index() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-20 text-center">
+      <section className="mx-auto max-w-6xl px-4 py-12 md:py-20 text-center">
         <Reveal>
-          <h2 className="text-3xl font-extrabold md:text-4xl">Bewerten Sie uns direkt Hier </h2>
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href={SITE.phoneHref} className="btn-press inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3.5 font-bold text-primary-foreground"><Phone className="h-5 w-5" aria-hidden="true" />{SITE.phone}</a>
+          <h2 className="text-2xl font-extrabold sm:text-3xl md:text-4xl">Bewerten Sie uns direkt Hier </h2>
+          <div className="mt-6 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap md:mt-8">
+            <a href={SITE.phoneHref} className="btn-press inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3.5 font-bold text-primary-foreground"><Phone className="h-5 w-5" aria-hidden="true" />{SITE.phone}</a>
             <Link to="/kontakt" className="btn-press rounded-lg border border-primary px-6 py-3.5 font-bold text-primary">Anfrage senden</Link>
           </div>
         </Reveal>
@@ -177,7 +177,7 @@ function RotatingWord() {
   }, []);
   return (
     <span className="block min-h-[1.25em]" aria-live="polite">
-      <span key={i} className="hero-word text-gradient-ceri inline-block">{WORDS[i]}</span>
+      <span key={i} className="hero-word text-gradient-ceri inline-block whitespace-nowrap text-[0.92em] md:whitespace-normal md:text-[1em]">{WORDS[i]}</span>
     </span>
   );
 }

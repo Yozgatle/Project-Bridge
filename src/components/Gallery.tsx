@@ -30,11 +30,11 @@ export function Gallery() {
   }, []);
   if (!items || items.length === 0) return null;
   return (
-    <section className="mx-auto max-w-6xl px-4 py-20">
+    <section className="mx-auto max-w-6xl px-4 py-12 md:py-20">
       <p className="text-sm font-bold uppercase tracking-widest text-primary">Aus unserer Arbeit</p>
-      <h2 className="mt-2 text-3xl font-extrabold md:text-4xl">Vorher – Nachher</h2>
+      <h2 className="mt-2 text-2xl font-extrabold sm:text-3xl md:text-4xl">Vorher – Nachher</h2>
       <p className="mt-3 text-muted-foreground">Ziehen Sie den Regler und sehen Sie den Unterschied echter Einsätze.</p>
-      <div className="mt-10 grid gap-8 md:grid-cols-2">
+      <div className="mt-6 grid gap-6 md:mt-10 md:gap-8 md:grid-cols-2">
         {items.map((i) => (
           <figure key={i.id}>
             <BeforeAfter before={i.before} after={i.after} alt={i.title} />

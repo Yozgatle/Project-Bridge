@@ -14,15 +14,15 @@ const details = [
 export function Prices() {
   return (
     <div>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-3 sm:grid-cols-2 md:gap-4 lg:grid-cols-3">
         {PRICES.map((p, i) => (
-          <Accordion key={p.title} type="single" collapsible className="card-hover rounded-lg border border-border bg-card p-5">
+          <Accordion key={p.title} type="single" collapsible className="card-hover rounded-lg border border-border bg-card p-4 md:p-5">
             <AccordionItem value={p.title} className="border-0">
               <AccordionTrigger className="items-start py-0 text-left hover:no-underline"><span>
                 <span className="block font-bold">{p.title}</span>
-                <span className="mt-2 block font-display text-3xl font-extrabold text-primary">{p.price}</span>
+                <span className="mt-1.5 block font-display text-2xl md:mt-2 md:text-3xl font-extrabold text-primary">{p.price}</span>
                 <span className="mt-2 block text-sm font-normal text-muted-foreground">{p.note}</span>
-                <span className="mt-4 block text-sm font-bold text-primary">Was ist enthalten?</span>
+                <span className="mt-3 block text-sm font-bold text-primary md:mt-4">Was ist enthalten?</span>
               </span></AccordionTrigger>
               <AccordionContent className="pt-5 text-sm text-muted-foreground">{details[i]} Alle Beträge inklusive 20 % USt. Für Anfahrten außerhalb Wiens ist eine eigene Vereinbarung nötig.</AccordionContent>
             </AccordionItem>
