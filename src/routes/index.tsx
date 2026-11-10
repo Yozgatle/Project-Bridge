@@ -78,7 +78,7 @@ function Index() {
       </section>
 
       <section id="stromausfall" className="relative bg-secondary">
-        <div className="pointer-events-none absolute inset-x-0 top-0 mx-auto max-w-6xl"><LightStory /></div>
+        <div className="pointer-events-none absolute inset-x-0 top-[35%] mx-auto hidden max-w-6xl lg:block"><div className="relative w-1/3"><LightStory /></div></div>
         <div className="relative mx-auto grid max-w-6xl items-start gap-6 px-4 py-14 lg:grid-cols-[1fr_2fr]">
           <Reveal>
             <p className="text-sm font-bold uppercase tracking-widest text-primary">Erstberater</p>
