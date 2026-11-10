@@ -44,3 +44,4 @@ use the editor.
 - Reviews remain honest empty states until an actual business profile is confirmed – why: never fabricate testimonials or metrics.
 - Home light bulb is a scroll-lit background decoration in the services section (`src/components/LightStory.tsx`, pure SVG) – why: fast, no extra section.
 - Project was migrated from an exported archive of an earlier Lovable project; the database schema was recreated in one consolidated migration – why: old Cloud backend is not shared.
+- Cookie consent goes only through src/lib/consent.ts with the defaults script first in root head; fonts are self-hosted via @fontsource – why: Austrian TKG/DSGVO, no Google Fonts requests.

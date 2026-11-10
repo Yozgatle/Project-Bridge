@@ -1,6 +1,14 @@
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
+@import "@fontsource/archivo/500.css";
+@import "@fontsource/archivo/600.css";
+@import "@fontsource/archivo/700.css";
+@import "@fontsource/archivo/800.css";
+@import "@fontsource/manrope/400.css";
+@import "@fontsource/manrope/500.css";
+@import "@fontsource/manrope/600.css";
+@import "@fontsource/manrope/700.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -179,3 +187,12 @@
 .site-header nav[aria-label="Hauptnavigation"] a:hover { color: var(--color-primary) !important; }
 /* Hero text readable on photo without fading the image */
 .hero-text h1, .hero-text p, .hero-text li { text-shadow: 0 0 2px rgba(255,255,255,.95), 0 0 12px rgba(255,255,255,.85), 0 0 28px rgba(255,255,255,.6); }
+
+/* Main menu always white on the navy header, CERI orange on hover/active */
+html body header.site-header nav[aria-label="Hauptnavigation"] a { color: #fff !important; text-shadow: 0 1px 6px rgba(0,0,0,.45); }
+html body header.site-header nav[aria-label="Hauptnavigation"] a:hover,
+html body header.site-header nav[aria-label="Hauptnavigation"] a.text-primary { color: var(--color-primary) !important; }
+html body header.site-header > div:nth-child(2),
+html body header.site-header > div:nth-child(2) > nav[aria-label="Mobile Navigation"] { background: color-mix(in oklab, var(--brand-navy) 95%, transparent) !important; color: #fff; }
+html body header.site-header[data-clear] > div:nth-child(2) { background: transparent !important; }
+html body header.site-header > div:nth-child(2) button[aria-label^="Menü"] { color: #fff; border-color: rgb(255 255 255 / .3); }

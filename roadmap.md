@@ -46,3 +46,6 @@
 - [ ] Google Maps verbinden – Verbindung wurde übersprungen
 - [ ] Alte Anfragen & Vorher/Nachher-Fotos aus dem alten Projekt übernehmen – wartet auf Export
 - [ ] Admin-Konto auf /admin neu registrieren (erstes Konto wird Admin)
+- [x] Menüschrift weiß lesbar
+- [x] e.U. entfernt, lokale Fonts, Cookie-Banner, Datenschutz aktualisiert
+- [ ] Genauer Gewerbewortlaut vom Inhaber
