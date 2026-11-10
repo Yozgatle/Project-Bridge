@@ -148,8 +148,8 @@ function RootShell({ children }: { children: ReactNode }) {
         `}</style>
       </head>
       <body>
-        <div id="splash" aria-hidden="true"><img src="/images/ceri-logo.png" alt="CERI Elektroinstallationen" /></div>
-        <script dangerouslySetInnerHTML={{ __html: "window.addEventListener('load',function(){var s=document.getElementById('splash');if(s){s.classList.add('splash-hide');setTimeout(function(){s.remove()},550)}});" }} />
+        <div id="splash" aria-hidden="true" suppressHydrationWarning><img src="/images/ceri-logo.png" alt="CERI Elektroinstallationen" /></div>
+        <script dangerouslySetInnerHTML={{ __html: "window.addEventListener('load',function(){var s=document.getElementById('splash');if(s){s.classList.add('splash-hide');setTimeout(function(){s.style.display='none'},550)}});" }} />
         {children}
         <Scripts />
       </body>
