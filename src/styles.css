@@ -1,42 +1,16 @@
-/*
- * Tailwind v4 entry: config lives here, with no tailwind.config.js or PostCSS plugin.
- * - Keep every @import in this top block, above @theme and the rest of the file. Install an
- *   npm package before @importing its CSS. Never @import a remote URL (web fonts, CDN CSS): the
- *   build resolves @import from the filesystem. Load those with a <link> in the head() of
- *   src/routes/__root.tsx and name the family in a --font-* token in @theme inline below.
- */
 @import "tailwindcss" source(none);
 @source "../src";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
-/*
- * Design system definition.
- *
- * The design lives in this file: oklch color tokens on the shadcn variables
- * (--background, --foreground, --primary, --secondary, --muted, --accent, ...) plus
- * new tokens as needed, font tokens, and custom styles and animations.
- *
- * The @theme inline block maps CSS custom properties to Tailwind utility
- * classes (e.g. --color-primary -> bg-primary, text-primary).
- *
- * The :root and .dark blocks define the actual color values using oklch.
- * All colors MUST use oklch format.
- *
- * To add a new semantic color:
- * 1. Add the variable to :root (light value) and .dark (dark value)
- * 2. Register it in @theme inline as --color-<name>: var(--<name>)
- */
-
 @theme inline {
+  --font-display: "Archivo", sans-serif;
+  --font-sans: "Manrope", sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -53,103 +27,139 @@
   --color-accent-foreground: var(--accent-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
+  --color-whatsapp: var(--whatsapp);
+  --color-dark: var(--dark);
+  --color-dark-foreground: var(--dark-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-ring-offset-background: var(--background);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 :root {
-  --radius: 0.625rem;
+  --radius: 0.75rem;
   --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.2 0.02 260);
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
+  --card-foreground: oklch(0.22 0.04 260);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
-}
-
-.dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --popover-foreground: oklch(0.22 0.04 260);
+  --primary: oklch(0.64 0.19 48);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.965 0.012 250);
+  --secondary-foreground: oklch(0.22 0.04 260);
+  --muted: oklch(0.965 0.012 250);
+  --muted-foreground: oklch(0.5 0.03 255);
+  --accent: oklch(0.78 0.16 70);
+  --accent-foreground: oklch(0.22 0.04 260);
+  --destructive: oklch(0.58 0.22 27);
+  --destructive-foreground: oklch(0.99 0 0);
+  --whatsapp: oklch(0.62 0.17 150);
+  --dark: oklch(0.2 0.02 260);
+  --dark-foreground: oklch(0.97 0.01 250);
+  --border: oklch(0.91 0.015 250);
+  --input: oklch(0.88 0.02 250);
+  --ring: oklch(0.64 0.19 48);
 }
 
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
-
+  * { border-color: var(--color-border); }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
   }
+  h1, h2, h3 { font-family: var(--font-display); }
+  a, button { letter-spacing: 0; transition: color 160ms, background-color 160ms, border-color 160ms, opacity 160ms, transform 160ms; }
+  a:hover, button:hover:not(:disabled) { filter: brightness(0.96); }
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* Dezente Microinteractions: 150–250 ms, transform/opacity-basiert */
+@utility btn-press {
+  transition: transform 150ms cubic-bezier(0.22, 1, 0.36, 1), background-color 150ms, color 150ms, border-color 150ms, box-shadow 200ms, opacity 150ms;
+  &:active:not(:disabled) {
+    transform: scale(0.97);
+  }
+}
+
+@utility card-hover {
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 200ms, border-color 200ms;
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px -14px color-mix(in oklab, var(--primary) 30%, transparent);
+  }
+}
+
+/* Dezenter Scroll-Reveal; bei reduzierter Bewegung sofort sichtbar */
+@utility reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 500ms cubic-bezier(0.22, 1, 0.36, 1), transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+  &.reveal-visible {
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* LightStory */
+.ls-glow { position:absolute; inset:0; pointer-events:none; transition:opacity .6s; background: radial-gradient(circle at 30% 50%, color-mix(in oklab, var(--accent) 28%, transparent), transparent 60%); }
+@keyframes ls-flicker { 0%,100%{opacity:.35} 10%{opacity:1} 20%{opacity:.2} 35%{opacity:.8} 50%{opacity:.15} 70%{opacity:.6} }
+.ls-flicker { animation: ls-flicker 1.2s steps(1) infinite; }
+@keyframes ls-spark { 0%,100%{opacity:0} 40%{opacity:1} }
+.ls-spark { animation: ls-spark .5s infinite; }
+@keyframes ls-in { from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:none} }
+.ls-in { animation: ls-in .5s ease-out both; }
+@media (prefers-reduced-motion: reduce) { .ls-flicker,.ls-spark,.ls-in { animation:none } }
+@keyframes marquee-right { from { transform: translateX(-50%) } to { transform: translateX(0) } }
+.marquee-right { animation: marquee-right 40s linear infinite; }
+.marquee-right:hover { animation-play-state: paused; }
+.marquee-mask { mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+@media (prefers-reduced-motion: reduce) { .marquee-right { animation: none } }
+
+@keyframes kenburns { from { transform: scale(1) translate(0,0); } to { transform: scale(1.08) translate(-1.5%,-1%); } }
+
+
+#splash { position: fixed; inset: 0; z-index: 100; display: grid; place-items: center; background: var(--background); transition: opacity .5s; }
+#splash img { width: min(60vw, 280px); animation: splash-pulse 1.2s ease-in-out infinite; }
+#splash.splash-hide { opacity: 0; pointer-events: none; }
+@keyframes splash-pulse { 50% { transform: scale(1.05); opacity: .85 } }
+
+/* Kompakter mobiler Header: Telefon-CTA ausblenden, damit rechts nur das Menü bleibt. */
+@media (max-width: 639px) {
+  header.sticky > div:first-child > div { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+  header.sticky > div:nth-child(2) > div:first-child { gap: 0.5rem; padding-top: 0.375rem; padding-bottom: 0.375rem; }
+  header.sticky > div:nth-child(2) > div:first-child > a > img { width: 112px; }
+  header.sticky > div:nth-child(2) > div:first-child > div > a[href^="tel:"] { display: none; }
+}
+
+/* Scroll-Animation: Header blendet beim Herunterscrollen aus und erscheint am Seitenanfang wieder. */
+@supports (animation-timeline: scroll()) {
+  @keyframes header-scroll-hide {
+    to { opacity: 0; transform: translateY(-100%); }
+  }
+  header.sticky {
+    animation: header-scroll-hide linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0px 120px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  header.sticky { animation: none !important; }
 }
