@@ -21,7 +21,7 @@ export const TURNSTILE_SITE_KEY = "";
 
 // GISA-Zahl und Firmenbuch fehlen noch – vom Inhaber nachzureichen.
 export const COMPANY = {
-  legalName: "Savas Çeri e.U.",
+  legalName: "Savas Ceri",
   owner: "Savas Ceri",
   uid: "ATU56543057",
   gisa: "601688109",
