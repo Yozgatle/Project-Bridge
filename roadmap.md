@@ -38,3 +38,11 @@
 - [ ] P0 echte Unternehmensdaten (Telefon, Adresse, UID, GISA, Preise) – wartet auf Bestätigung durch Burak
 - [ ] E-Mail-Benachrichtigung bei neuen Anfragen – wartet auf eigene Domain + Zieladresse
 - [ ] Sitemap – wartet auf finale veröffentlichte URL
+
+## Umzug in neues Lovable-Projekt (10.11.2026)
+- [x] Seiten, Inhalte, Bilder, Datenbank-Struktur, Fotospeicher, KI-Erstberater übernommen
+- [ ] Spam-Schutz: öffentlicher Turnstile-Websiteschlüssel + TURNSTILE_SECRET_KEY – wartet auf Burak
+- [ ] E-Mail-Versand über api.ceri.at: CERI_MAIL_API_TOKEN – wartet auf Burak
+- [ ] Google Maps verbinden – Verbindung wurde übersprungen
+- [ ] Alte Anfragen & Vorher/Nachher-Fotos aus dem alten Projekt übernehmen – wartet auf Export
+- [ ] Admin-Konto auf /admin neu registrieren (erstes Konto wird Admin)
