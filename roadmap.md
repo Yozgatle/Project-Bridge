@@ -49,3 +49,5 @@
 - [x] Menüschrift weiß lesbar
 - [x] e.U. entfernt, lokale Fonts, Cookie-Banner, Datenschutz aktualisiert
 - [ ] Genauer Gewerbewortlaut vom Inhaber
+- [x] Handyansicht kompakter (PC unverändert)
+- [ ] Handy-Startbild: kein grauer Kasten, Verteilerschrank sichtbar
