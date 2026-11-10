@@ -33,7 +33,7 @@ const FIVE_STAR_REVIEWS = [
 
 function Card([Icon, title, text]: (typeof ITEMS)[number]) {
   return (
-    <div className="mx-3 flex w-72 shrink-0 items-center gap-4 rounded-2xl bg-dark-foreground/5 p-5 ring-1 ring-dark-foreground/10">
+    <div className="mx-3 flex w-72 shrink-0 items-center gap-4 rounded-2xl bg-card p-5 ring-1 ring-border">
       <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-accent/15 text-accent"><Icon className="h-6 w-6" aria-hidden /></span>
       <div><p className="text-xl font-extrabold">{title}</p><p className="text-sm opacity-75">{text}</p></div>
     </div>
@@ -42,7 +42,7 @@ function Card([Icon, title, text]: (typeof ITEMS)[number]) {
 
 export function TrustSection() {
   return (
-    <section className="border-y-4 border-accent bg-dark py-14 text-dark-foreground">
+    <section className="border-y-4 border-accent bg-secondary py-14 text-foreground">
       <h2 className="mb-8 text-center text-2xl font-extrabold md:text-3xl">Warum Ceri?</h2>
       <div className="marquee-mask overflow-hidden">
         <div className="marquee-right flex w-max">
