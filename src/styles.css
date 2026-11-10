@@ -148,21 +148,6 @@
   header.site-header > div:nth-child(2) > div:first-child > div > a[href^="tel:"] { display: none; }
 }
 
-/* Scroll-Animation: Header blendet beim Herunterscrollen aus und erscheint am Seitenanfang wieder. */
-@supports (animation-timeline: scroll()) {
-  @keyframes header-scroll-hide {
-    to { opacity: 0; transform: translateY(-100%); }
-  }
-  header.site-header {
-    animation: header-scroll-hide linear both;
-    animation-timeline: scroll(root block);
-    animation-range: 0px 120px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  header.site-header { animation: none !important; }
-}
 
 :root {
   --brand-navy: #171c28;

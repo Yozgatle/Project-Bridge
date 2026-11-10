@@ -84,7 +84,7 @@ export function LightStory() {
   // Hysterese: kein nervöses Hin- und Herspringen
 
   return (
-    <div ref={ref} aria-hidden className="pointer-events-none absolute right-4 top-0 hidden -translate-y-1/3 md:block lg:right-16">
+    <div ref={ref} aria-hidden className="pointer-events-none absolute right-4 top-4 hidden md:block lg:right-16">
       <div className="absolute left-1/2 top-[38%] h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl" style={{ opacity: 0.6 * on, background: "radial-gradient(circle, oklch(0.9 0.15 85), transparent 70%)" }} />
       <div className="relative scale-75"><Bulb on={on} /></div>
     </div>
