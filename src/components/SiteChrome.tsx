@@ -40,7 +40,7 @@ export function Header() {
   return (
     <header data-clear={clear || undefined} className={`site-header ${isHome ? "fixed inset-x-0" : "sticky"} top-0 z-40 transition-[transform,background-color,box-shadow] duration-300 ${hidden && !menu ? "-translate-y-full" : "translate-y-0"} ${clear ? "bg-transparent" : "bg-background/95 shadow-sm backdrop-blur"}`}>
       <div className={clear ? "bg-brand-navy/70 text-dark-foreground backdrop-blur-sm" : "bg-dark text-dark-foreground"}>
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2 text-xs sm:text-sm">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-1 text-[11px] sm:text-xs">
           <span className="flex items-center gap-2">
             <span className="h-2 w-2 animate-pulse rounded-full bg-accent" aria-hidden="true" /> 24/7 Elektro-Notdienst in Wien & Umgebung
           </span>
@@ -48,21 +48,21 @@ export function Header() {
         </div>
       </div>
       <div className={clear ? "border-b border-transparent" : "border-b border-border"}>
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2">
           <Link to="/" className="flex items-center" aria-label="CERI – Startseite">
-            <img src={logoUrl} alt="CERI" width={1015} height={600} className="h-auto w-[150px] shrink-0 object-contain sm:w-[180px] lg:w-[200px]" />
+            <img src={logoUrl} alt="CERI" width={1015} height={600} className="h-auto w-[104px] shrink-0 object-contain sm:w-[120px] lg:w-[140px]" />
           </Link>
-          <nav className="hidden gap-4 text-sm font-semibold lg:flex" aria-label="Hauptnavigation">
+          <nav className="hidden items-center gap-1 text-[13px] font-semibold lg:flex xl:text-sm" aria-label="Hauptnavigation">
             {navLinks.map((l) => (
-              <Link key={l.to} to={l.to} activeOptions={{ exact: l.to === "/" }} className="transition-colors hover:text-primary" activeProps={{ className: "text-primary" }}>{l.label}</Link>
+              <Link key={l.to} to={l.to} activeOptions={{ exact: l.to === "/" }} className="rounded-full px-2.5 py-1.5 transition-colors hover:text-primary" activeProps={{ className: "text-primary" }}>{l.label}</Link>
             ))}
           </nav>
           <div className="flex items-center gap-2">
-            <CallbackButton className="btn-press hidden rounded-lg border border-primary px-4 py-2 text-sm font-bold text-primary md:inline-flex" />
-            <a href={SITE.phoneHref} className="btn-press inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-bold text-primary-foreground">
+            <CallbackButton className="btn-press hidden h-9 rounded-full border border-primary px-4 text-xs font-bold text-primary xl:inline-flex" />
+            <a href={SITE.phoneHref} aria-label="Jetzt anrufen" className="btn-press inline-flex h-9 items-center gap-2 rounded-full bg-primary px-3 text-xs font-bold text-primary-foreground sm:px-4">
               <Phone className="h-4 w-4" aria-hidden="true" /> <span className="hidden sm:inline">Jetzt anrufen</span>
             </a>
-            <Button variant="ghost" type="button" aria-label={menu ? "Menü schließen" : "Menü öffnen"} aria-expanded={menu} onClick={() => setMenu(!menu)} className="btn-press grid h-10 w-10 place-items-center rounded-lg border border-border lg:hidden">
+            <Button variant="ghost" type="button" aria-label={menu ? "Menü schließen" : "Menü öffnen"} aria-expanded={menu} onClick={() => setMenu(!menu)} className="btn-press grid h-9 w-9 place-items-center rounded-full bg-brand-navy p-0 text-dark-foreground shadow-md hover:bg-brand-navy/90 hover:text-dark-foreground lg:hidden">
               {menu ? <X className="h-5 w-5" aria-hidden="true" /> : <Menu className="h-5 w-5" aria-hidden="true" />}
             </Button>
           </div>
