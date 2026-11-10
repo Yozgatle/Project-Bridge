@@ -142,10 +142,12 @@
 
 /* Kompakter mobiler Header: Telefon-CTA ausblenden, damit rechts nur das Menü bleibt. */
 @media (max-width: 639px) {
-  header.site-header > div:first-child > div { padding-top: 0.25rem; padding-bottom: 0.25rem; }
-  header.site-header > div:nth-child(2) > div:first-child { gap: 0.5rem; padding-top: 0.375rem; padding-bottom: 0.375rem; }
-  header.site-header > div:nth-child(2) > div:first-child > a > img { width: 112px; }
+  header.site-header > div:first-child > div { padding-top: 0.125rem; padding-bottom: 0.125rem; font-size: 0.7rem; }
+  header.site-header > div:nth-child(2) > div:first-child { gap: 0.5rem; padding-top: 0.25rem; padding-bottom: 0.25rem; }
+  header.site-header > div:nth-child(2) > div:first-child > a > img { width: 92px; }
   header.site-header > div:nth-child(2) > div:first-child > div > a[href^="tel:"] { display: none; }
+  header.site-header nav a { font-size: 0.8125rem; }
+  header.site-header button, header.site-header > div:nth-child(2) a { padding-top: 0.375rem; padding-bottom: 0.375rem; }
 }
 
 
