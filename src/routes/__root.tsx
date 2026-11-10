@@ -11,6 +11,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import { Header, Footer, MobileActionBar, CallbackModal } from "../components/SiteChrome";
+import { CookieBanner } from "../components/CookieBanner";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
@@ -66,10 +67,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap" },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
+    scripts: [{ children: "window.dataLayer = window.dataLayer || [];\nfunction gtag() {\n  dataLayer.push(arguments);\n}\ngtag(\"consent\", \"default\", {\n  analytics_storage: \"granted\",\n  ad_storage: \"granted\",\n  ad_user_data: \"granted\",\n  ad_personalization: \"granted\",\n});\ngtag(\"consent\", \"default\", {\n  analytics_storage: \"denied\",\n  ad_storage: \"denied\",\n  ad_user_data: \"denied\",\n  ad_personalization: \"denied\",\n  wait_for_update: 500,\n  region: \"AT,BE,BG,HR,CY,CZ,DK,EE,FI,FR,DE,GR,HU,IE,IT,LV,LT,LU,MT,NL,PL,PT,RO,SK,SI,ES,SE,IS,LI,NO,GB,CH,RE,GP,MQ,GF,YT,MF,AX,CA-QC\".split(\",\"),\n});\n(function () {\n  var signals = {\n    analytics: [\"analytics_storage\"],\n    advertising: [\"ad_storage\", \"ad_user_data\", \"ad_personalization\"],\n  };\n  for (var purpose in signals) {\n    var choice = null;\n    try {\n      var saved = JSON.parse(localStorage.getItem(\"cookie_consent_\" + purpose) || \"null\");\n      if (\n        saved &&\n        (saved.choice === \"denied\" || (saved.choice === \"granted\" && Date.now() - saved.at < 365 * 86400000))\n      ) {\n        choice = saved.choice;\n      }\n    } catch (e) {}\n    if (navigator.globalPrivacyControl === true) choice = \"denied\";\n    if (!choice) continue;\n    var update = {};\n    signals[purpose].forEach(function (signal) {\n      update[signal] = choice;\n    });\n    gtag(\"consent\", \"update\", update);\n  }\n})();\n" }],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -213,6 +213,7 @@ function RootComponent() {
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Header />
       <main><Outlet /></main>
+      <CookieBanner />
       <Footer />
       <MobileActionBar />
       <CallbackModal />

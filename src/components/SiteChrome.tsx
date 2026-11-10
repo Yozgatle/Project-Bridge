@@ -1,3 +1,4 @@
+import { openCookieSettings } from "@/components/CookieBanner";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { Phone, MessageCircle, PhoneCall, X, Menu } from "lucide-react";
@@ -115,6 +116,7 @@ export function Footer() {
         <span>© {new Date().getFullYear()} {SITE.name}</span>
         <Link to="/impressum" className="hover:text-primary">Impressum</Link>
         <Link to="/datenschutz" className="hover:text-primary">Datenschutz</Link>
+        <button type="button" onClick={openCookieSettings} className="hover:text-primary">Cookie-Einstellungen</button>
       </div>
     </footer>
   );
