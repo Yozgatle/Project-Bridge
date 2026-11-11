@@ -50,27 +50,27 @@ function Index() {
   return (
     <>
       <section className="relative overflow-hidden">
-        <video src={heroVideo.url} poster={hero} autoPlay muted loop playsInline preload="metadata" aria-label="Elektriker arbeitet an einem Verteiler in Wien" className="mt-[89px] block h-[42svh] min-h-[280px] w-full object-cover object-[85%_center] md:absolute md:mt-0 md:inset-0 md:h-full md:min-h-0 md:object-center" />
-        <div className="pointer-events-none absolute inset-0 hidden bg-gradient-to-r from-brand-navy/90 via-brand-navy/55 to-transparent md:block" aria-hidden="true" />
-        <div className="relative mx-auto flex max-w-6xl flex-col px-4 pb-8 pt-5 md:min-h-[100svh] md:justify-center md:py-16 md:max-w-none md:px-[max(1rem,calc((100vw-1280px)/2+1rem))]">
+        <video src={heroVideo.url} poster={hero} autoPlay muted loop playsInline preload="metadata" aria-label="Elektriker arbeitet an einem Verteiler in Wien" className="absolute inset-0 block h-full w-full object-cover object-[70%_center] md:object-center" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-navy/95 via-brand-navy/60 to-brand-navy/40 md:bg-gradient-to-r md:from-brand-navy/90 md:via-brand-navy/55 md:to-transparent" aria-hidden="true" />
+        <div className="relative mx-auto flex min-h-[100svh] max-w-6xl flex-col justify-end px-4 pb-24 pt-28 md:justify-center md:py-16 md:max-w-none md:px-[max(1rem,calc((100vw-1280px)/2+1rem))]">
           <div className="relative">
-            <p className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-wider text-brand-navy/80 md:text-sm md:text-white/85">
+            <p className="flex items-center gap-3 text-[10px] font-bold uppercase tracking-wider text-white/85 md:text-sm">
               <span className="h-[2px] w-10 bg-primary" aria-hidden="true" /> 24h Meisterbetrieb · Alle 23 Wiener Bezirke &amp; Umland
             </p>
-            <h1 className="mt-2.5 max-w-2xl text-[1.7rem] font-extrabold leading-[1.08] text-brand-navy sm:text-4xl md:mt-4 md:text-6xl md:text-white">
+            <h1 className="mt-2.5 max-w-2xl text-[1.9rem] font-extrabold leading-[1.08] text-white sm:text-4xl md:mt-4 md:text-6xl">
               Elektriker Wien – Soforthilfe bei <RotatingWord />
             </h1>
-            <p className="mt-2.5 max-w-lg text-[13px] leading-snug font-medium md:leading-normal md:mt-5 md:text-base lg:text-lg text-brand-navy/85 md:text-lg md:text-white/90">In 30–45 Min. bei Ihnen vor Ort. Transparente Festpreise, faire Anfahrt und direkte Fehlerbehebung.</p>
-            <ul className="mt-2.5 flex flex-wrap gap-x-3 gap-y-1 text-xs font-semibold md:mt-4 md:gap-x-5 md:text-sm text-brand-navy md:text-white">
+            <p className="mt-3 max-w-lg text-sm font-medium leading-snug text-white/90 md:mt-5 md:text-lg md:leading-normal">In 30–45 Min. bei Ihnen vor Ort. Transparente Festpreise, faire Anfahrt und direkte Fehlerbehebung.</p>
+            <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-xs font-semibold text-white md:mt-4 md:gap-x-5 md:text-sm">
               {["Keine versteckten Kosten", "Meisterbetrieb", "24/7 erreichbar"].map((t) => (
                 <li key={t} className="flex items-center gap-1"><Check className="h-3.5 w-3.5 text-primary md:h-4 md:w-4" aria-hidden="true" />{t}</li>
               ))}
             </ul>
-            <div className="mt-4 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-3 md:mt-8">
+            <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-3 md:mt-8">
               <a href={SITE.phoneHref} className="hero-cta btn-press inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg px-4 py-3 text-[15px] font-extrabold md:whitespace-normal md:px-6 md:py-4 md:text-lg">
                 <Phone className="h-5 w-5 shrink-0" aria-hidden="true" /> <span className="md:hidden">Notdienst: {SITE.phone}</span><span className="hidden md:inline">Jetzt Notdienst anrufen: {SITE.phone}</span>
               </a>
-              <a href="#stromausfall" onClick={(e) => { e.preventDefault(); document.getElementById("stromausfall")?.scrollIntoView({ behavior: "smooth" }); }} className="btn-press inline-flex items-center justify-center gap-2 rounded-lg border border-brand-navy/20 bg-background/40 px-4 py-2.5 text-sm font-bold md:px-6 md:text-base md:py-4 text-brand-navy md:border-white/30 md:text-white md:bg-white/10 backdrop-blur-md transition-colors hover:bg-background/70">
+              <a href="#stromausfall" onClick={(e) => { e.preventDefault(); document.getElementById("stromausfall")?.scrollIntoView({ behavior: "smooth" }); }} className="btn-press inline-flex items-center justify-center gap-2 rounded-lg border border-white/30 bg-white/10 px-4 py-2.5 text-sm font-bold text-white backdrop-blur-md transition-colors hover:bg-white/20 md:px-6 md:py-4 md:text-base">
                 Erstberater starten <ArrowDown className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
