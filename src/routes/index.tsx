@@ -78,7 +78,7 @@ function Index() {
         </div>
       </section>
 
-      <section id="stromausfall" className="relative bg-secondary">
+      <section id="stromausfall" className="relative bg-secondary/60">
         <div className="pointer-events-none absolute inset-x-0 top-[35%] mx-auto hidden max-w-6xl lg:block"><div className="relative w-1/3"><LightStory /></div></div>
         <div className="relative mx-auto grid max-w-6xl items-start gap-5 px-4 py-10 md:gap-6 md:py-14 lg:grid-cols-[1fr_2fr]">
           <Reveal>
@@ -113,7 +113,7 @@ function Index() {
 
       <Gallery />
 
-      <section className="bg-secondary">
+      <section className="bg-secondary/60">
         <div className="mx-auto max-w-6xl px-4 py-12 md:py-20">
           <Reveal>
             <p className="text-sm font-bold uppercase tracking-widest text-primary">Faire Preise</p>
@@ -139,7 +139,7 @@ function Index() {
         </Reveal>
       </section>
 
-      <section className="bg-secondary">
+      <section className="bg-secondary/60">
         <div className="mx-auto max-w-6xl px-4 py-12 md:py-20">
           <Reveal>
             <h2 className="text-2xl font-extrabold sm:text-3xl md:text-4xl">Häufige Fragen</h2>

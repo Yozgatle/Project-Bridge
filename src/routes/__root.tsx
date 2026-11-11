@@ -11,6 +11,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import { Header, Footer, MobileActionBar, CallbackModal } from "../components/SiteChrome";
+import { ShaderBackground } from "../components/ShaderBackground";
 import { CookieBanner } from "../components/CookieBanner";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -212,6 +213,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Header />
+      <ShaderBackground />
       <main><Outlet /></main>
       <CookieBanner />
       <Footer />
