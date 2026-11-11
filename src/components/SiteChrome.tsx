@@ -50,7 +50,7 @@ export function Header() {
       <div className={clear ? "border-b border-transparent" : "border-b border-border"}>
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-2">
           <Link to="/" className="flex items-center" aria-label="CERI – Startseite">
-            <img src={logoUrl} alt="CERI" width={1015} height={600} className="h-auto w-[104px] shrink-0 object-contain sm:w-[120px] lg:w-[140px]" />
+            <img src={logoUrl} alt="CERI" width={1015} height={600} className={`h-auto w-[104px] shrink-0 object-contain sm:w-[120px] lg:w-[140px] ${clear ? "md:hidden" : ""}`} />{clear && <img src="/images/ceri-logo-white.svg" alt="" aria-hidden="true" width={1015} height={600} className="hidden h-auto w-[120px] shrink-0 object-contain md:block lg:w-[140px]" />}
           </Link>
           <nav className="hidden items-center gap-1 text-[13px] font-semibold lg:flex xl:text-sm" aria-label="Hauptnavigation">
             {navLinks.map((l) => (
