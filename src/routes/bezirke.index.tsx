@@ -22,7 +22,7 @@ function Bezirke() {
       <p className="mt-3 max-w-2xl text-muted-foreground">Wählen Sie Ihren Bezirk – wir sind in ganz Wien und im angrenzenden Umland unterwegs.</p>
       <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {BEZIRKE.map((b) => (
-          <Link key={b.slug} to="/bezirke/$slug" params={{ slug: b.slug }} className="rounded-xl border border-border p-5 hover:border-primary">
+          <Link key={b.slug} to="/bezirke/$slug" params={{ slug: b.slug }} className="rounded-xl border border-border bg-card/70 backdrop-blur-sm p-5 hover:border-primary">
             <span className="font-display text-2xl font-extrabold text-primary">{b.plz}</span>
             <p className="mt-1 font-bold">{b.name}</p>
           </Link>

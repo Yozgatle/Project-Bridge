@@ -295,7 +295,7 @@ export function Erstberater() {
   }
 
   return (
-    <div className="rounded-lg border border-border bg-card p-4 shadow-xl md:p-7">
+    <div className="rounded-lg border border-border bg-card/70 backdrop-blur-sm p-4 shadow-xl md:p-7">
       <p className="text-xs font-bold uppercase tracking-widest text-primary">Digitaler Erstberater</p>
 
       {/* Fortschrittsanzeige */}

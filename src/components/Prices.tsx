@@ -16,7 +16,7 @@ export function Prices() {
     <div>
       <div className="grid gap-3 sm:grid-cols-2 md:gap-4 lg:grid-cols-3">
         {PRICES.map((p, i) => (
-          <Accordion key={p.title} type="single" collapsible className="card-hover rounded-lg border border-border bg-card p-4 md:p-5">
+          <Accordion key={p.title} type="single" collapsible className="card-hover rounded-lg border border-border bg-card/70 backdrop-blur-sm p-4 md:p-5">
             <AccordionItem value={p.title} className="border-0">
               <AccordionTrigger className="items-start py-0 text-left hover:no-underline"><span>
                 <span className="block font-bold">{p.title}</span>

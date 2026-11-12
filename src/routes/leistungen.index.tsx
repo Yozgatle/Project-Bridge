@@ -24,7 +24,7 @@ function Leistungen() {
       <p className="mt-3 max-w-2xl text-muted-foreground">Vom einzelnen Steckdosentausch bis zur kompletten Neuinstallation – fachgerecht, normgerecht und termintreu.</p>
       <div className="mt-10 grid gap-6 md:grid-cols-2">
         {SERVICES.map((s, i) => (
-          <Link key={s.title} to="/leistungen/$slug" params={{ slug: SERVICE_DETAILS[i]?.slug ?? "elektroinstallationen" }} className="card-hover overflow-hidden rounded-lg border border-border bg-card hover:border-primary">
+          <Link key={s.title} to="/leistungen/$slug" params={{ slug: SERVICE_DETAILS[i]?.slug ?? "elektroinstallationen" }} className="card-hover overflow-hidden rounded-lg border border-border bg-card/70 backdrop-blur-sm hover:border-primary">
             {s.image ? (
               <img src={s.image} alt={s.title} loading="lazy" className="h-52 w-full object-cover" />
             ) : (

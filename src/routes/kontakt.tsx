@@ -91,7 +91,7 @@ function Kontakt() {
           <a href={`mailto:${SITE.email}`} className="btn-press flex items-center gap-3 rounded-xl border border-border p-4 font-bold"><Mail aria-hidden="true" /> {SITE.email}</a>
         </div>
       </div>
-      <form onSubmit={submit} noValidate className="space-y-4 rounded-xl border border-border bg-card p-6">
+      <form onSubmit={submit} noValidate className="space-y-4 rounded-xl border border-border bg-card/70 backdrop-blur-sm p-6">
         <h2 className="text-2xl font-extrabold">Anfrageformular</h2>
         <p className="text-sm text-muted-foreground">Felder mit <span aria-hidden="true" className="text-destructive">*</span> sind Pflichtfelder.</p>
         <div className="grid gap-4 sm:grid-cols-2">
