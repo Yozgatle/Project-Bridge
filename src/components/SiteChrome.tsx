@@ -82,7 +82,7 @@ export function Header() {
 
 export function Footer() {
   return (
-    <footer className="border-t-4 border-primary bg-background/40 backdrop-blur-sm pb-24 text-foreground lg:pb-0">
+    <footer className="bg-background/40 backdrop-blur-sm pb-24 text-foreground lg:pb-0">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 text-sm sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link to="/" aria-label="CERI – Startseite">
@@ -111,8 +111,8 @@ export function Footer() {
           <a className="block text-muted-foreground transition-colors hover:text-primary" href={SITE.whatsapp}>WhatsApp</a>
         </div>
       </div>
-      <div className="mx-auto max-w-6xl border-t border-border px-4 py-10"><h2 className="text-lg font-bold">Unser Standort in Wien</h2><LocationMap /></div>
-      <div className="flex flex-wrap justify-center gap-4 border-t border-border py-6 text-xs text-muted-foreground">
+      <div className="mx-auto max-w-6xl px-4 py-10"><h2 className="text-lg font-bold">Unser Standort in Wien</h2><LocationMap /></div>
+      <div className="flex flex-wrap justify-center gap-4 py-6 text-xs text-muted-foreground">
         <span>© {new Date().getFullYear()} {SITE.name}</span>
         <Link to="/impressum" className="hover:text-primary">Impressum</Link>
         <Link to="/datenschutz" className="hover:text-primary">Datenschutz</Link>
