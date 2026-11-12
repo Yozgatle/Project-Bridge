@@ -42,7 +42,7 @@ function Card([Icon, title, text]: (typeof ITEMS)[number]) {
 
 export function TrustSection() {
   return (
-    <section className="border-y-4 border-accent bg-secondary py-10 text-foreground md:py-14">
+    <section className="border-y-4 border-accent bg-secondary/30 py-10 text-foreground md:py-14">
       <h2 className="mb-5 md:mb-8 text-center text-2xl font-extrabold md:text-3xl">Warum Ceri?</h2>
       <div className="marquee-mask overflow-hidden">
         <div className="marquee-right flex w-max">
@@ -55,7 +55,7 @@ export function TrustSection() {
 
 export function Reviews({ place }: { place?: string }) {
   return (
-    <section className="border-y border-border bg-secondary" aria-labelledby="reviews-heading">
+    <section className="border-y border-border bg-secondary/30" aria-labelledby="reviews-heading">
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-12">
         <p className="text-sm font-bold text-primary">Kundenstimmen{place ? ` · ${place}` : ""}</p>
         <h2 id="reviews-heading" className="mt-2 text-2xl font-extrabold">5-Sterne-Bewertungen auf MyHammer</h2>
