@@ -42,7 +42,7 @@ function Card([Icon, title, text]: (typeof ITEMS)[number]) {
 
 export function TrustSection() {
   return (
-    <section aria-label="Warum Ceri" className="border-y-4 border-accent bg-transparent py-6 text-foreground md:py-10">
+    <section aria-label="Warum Ceri" className="bg-transparent py-6 text-foreground md:py-10">
       <div className="mx-auto max-w-6xl px-4"><div className="marquee-mask overflow-hidden">
         <div className="marquee-right flex w-max">
           {[...ITEMS, ...ITEMS].map((it, i) => <div key={i} aria-hidden={i >= ITEMS.length}>{Card(it)}</div>)}
@@ -54,7 +54,7 @@ export function TrustSection() {
 
 export function Reviews({ place }: { place?: string }) {
   return (
-    <section className="border-y border-border bg-secondary/30" aria-labelledby="reviews-heading">
+    <section className="bg-transparent" aria-labelledby="reviews-heading">
       <div className="mx-auto max-w-6xl px-4 py-10 md:py-12">
         <p className="text-sm font-bold text-primary">Kundenstimmen{place ? ` · ${place}` : ""}</p>
         <h2 id="reviews-heading" className="mt-2 text-2xl font-extrabold">5-Sterne-Bewertungen auf MyHammer</h2>
