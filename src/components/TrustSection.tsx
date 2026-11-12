@@ -42,7 +42,7 @@ function Card([Icon, title, text]: (typeof ITEMS)[number]) {
 
 export function TrustSection() {
   return (
-    <section className="border-y-4 border-accent bg-secondary/30 py-10 text-foreground md:py-14">
+    <section className="border-y-4 border-accent bg-transparent py-10 text-foreground md:py-14">
       <h2 className="mb-5 md:mb-8 text-center text-2xl font-extrabold md:text-3xl">Warum Ceri?</h2>
       <div className="marquee-mask overflow-hidden">
         <div className="marquee-right flex w-max">

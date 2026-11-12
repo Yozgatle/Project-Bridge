@@ -82,7 +82,7 @@ export function Header() {
 
 export function Footer() {
   return (
-    <footer className="border-t-4 border-primary bg-secondary pb-24 text-foreground lg:pb-0">
+    <footer className="border-t-4 border-primary bg-background/40 backdrop-blur-sm pb-24 text-foreground lg:pb-0">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 text-sm sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link to="/" aria-label="CERI – Startseite">
