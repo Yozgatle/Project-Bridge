@@ -33,7 +33,7 @@ const FIVE_STAR_REVIEWS = [
 
 function Card([Icon, title, text]: (typeof ITEMS)[number]) {
   return (
-    <div className="mx-1.5 flex w-52 shrink-0 items-center gap-3 rounded-2xl bg-card/90 p-3 shadow-sm backdrop-blur-sm ring-1 ring-border md:mx-2.5 md:w-72 md:gap-4 md:p-5">
+    <div className="mx-1.5 flex h-20 w-60 shrink-0 items-center gap-3 rounded-2xl bg-card/90 p-3 shadow-sm backdrop-blur-sm ring-1 ring-border md:mx-2.5 md:h-24 md:w-72 md:gap-4 md:p-5">
       <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-accent/15 text-accent md:h-12 md:w-12"><Icon className="h-5 w-5 md:h-6 md:w-6" aria-hidden /></span>
       <div className="min-w-0"><p className="text-base font-extrabold leading-tight md:text-xl">{title}</p><p className="mt-0.5 text-xs leading-snug opacity-75 md:text-sm">{text}</p></div>
     </div>
@@ -43,11 +43,11 @@ function Card([Icon, title, text]: (typeof ITEMS)[number]) {
 export function TrustSection() {
   return (
     <section aria-label="Warum Ceri" className="border-y-4 border-accent bg-transparent py-6 text-foreground md:py-10">
-      <div className="marquee-mask overflow-hidden">
+      <div className="mx-auto max-w-6xl px-4"><div className="marquee-mask overflow-hidden">
         <div className="marquee-right flex w-max">
           {[...ITEMS, ...ITEMS].map((it, i) => <div key={i} aria-hidden={i >= ITEMS.length}>{Card(it)}</div>)}
         </div>
-      </div>
+      </div></div>
     </section>
   );
 }
