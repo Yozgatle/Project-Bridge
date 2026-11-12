@@ -33,7 +33,7 @@ const FIVE_STAR_REVIEWS = [
 
 function Card([Icon, title, text]: (typeof ITEMS)[number]) {
   return (
-    <div className="mx-1.5 flex h-20 w-60 shrink-0 items-center gap-3 rounded-2xl bg-card/90 p-3 shadow-sm backdrop-blur-sm ring-1 ring-border md:mx-2.5 md:h-24 md:w-72 md:gap-4 md:p-5">
+    <div className="mx-1.5 flex h-20 w-60 shrink-0 items-center gap-3 rounded-2xl bg-card/70 backdrop-blur-sm p-3 shadow-sm backdrop-blur-sm ring-1 ring-border md:mx-2.5 md:h-24 md:w-72 md:gap-4 md:p-5">
       <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-accent/15 text-accent md:h-12 md:w-12"><Icon className="h-5 w-5 md:h-6 md:w-6" aria-hidden /></span>
       <div className="min-w-0"><p className="text-base font-extrabold leading-tight md:text-xl">{title}</p><p className="mt-0.5 text-xs leading-snug opacity-75 md:text-sm">{text}</p></div>
     </div>
@@ -63,7 +63,7 @@ export function Reviews({ place }: { place?: string }) {
         </p>
         <div className="mt-5 grid gap-3 md:mt-6 md:gap-4 md:grid-cols-2">
           {FIVE_STAR_REVIEWS.map((review, index) => (
-            <article key={`${review.date}-${index}`} className="rounded-xl border border-border bg-background p-4 md:p-5">
+            <article key={`${review.date}-${index}`} className="rounded-xl border border-border bg-card/70 backdrop-blur-sm p-4 md:p-5">
               <div className="flex items-center gap-1 text-amber-500" aria-label="5 von 5 Sternen">
                 {Array.from({ length: 5 }, (_, starIndex) => (
                   <Star key={starIndex} className="h-4 w-4 fill-current" aria-hidden="true" />

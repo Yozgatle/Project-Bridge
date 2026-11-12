@@ -98,7 +98,7 @@ function Index() {
             {SERVICES.map((s, i) => {
               const Icon = icons[i] ?? Zap;
               return (
-                <Link key={s.title} to="/leistungen/$slug" params={{ slug: SERVICE_DETAILS[i]?.slug ?? "elektroinstallationen" }} className="card-hover group flex items-center gap-3 rounded-xl bg-card p-3.5 ring-1 md:gap-4 md:p-5 ring-border transition-colors hover:border-primary hover:bg-primary/5">
+                <Link key={s.title} to="/leistungen/$slug" params={{ slug: SERVICE_DETAILS[i]?.slug ?? "elektroinstallationen" }} className="card-hover group flex items-center gap-3 rounded-xl bg-card/70 backdrop-blur-sm p-3.5 ring-1 md:gap-4 md:p-5 ring-border transition-colors hover:border-primary hover:bg-primary/5">
                   <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-primary/10 md:h-12 md:w-12 text-primary"><Icon className="h-5 w-5 md:h-6 md:w-6" aria-hidden="true" /></span>
                   <h3 className="text-base font-bold md:text-lg group-hover:text-primary">{s.title}</h3>
                 </Link>
